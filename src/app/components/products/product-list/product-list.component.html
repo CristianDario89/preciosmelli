@@ -7,14 +7,14 @@
         <thead>
           <tr>
             <td>Nombre</td>
-            <td>Stock</td>
+            
             <td>Precio</td>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let product of productList">
             <td class="nombre">{{product.name}}</td>
-            <td>{{product.category}}</td>
+              
             <td >$ <span id="precioo"> {{product.price}}</span>   </td>
             <td>
               <a class="btn btn-secondary text-white" (click)="onEdit(product)">
