@@ -1,19 +1,33 @@
 <div class="card">
     <div class="card-body">
       <h6 class="text-center lista">
-        Lista of Productos
+        Lista de clientes
       </h6>
-      <table class="table table-sm table-hover">
+      <table class="table table-sm table-hover miform" >
         <thead>
           <tr>
             <td>Nombre</td>
+            <td>Direccion</td>
             
+            <td>Localidad</td>
+            <td>Pago</td>
+            
+            <td>Tipo</td>
+            <td>Ruta</td>
+            
+            <td>Observacion</td>
             <td>Precio</td>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let product of productList">
             <td class="nombre">{{product.name}}</td>
+            <td class="direccion">{{product.direccion}}</td>
+            <td class="localidad">{{product.localidad}}</td>
+            <td class="pago">{{product.pago}}</td>
+            <td class="tipo">{{product.tipo}}</td>
+            <td class="ruta">{{product.ruta}}</td>
+            <td class="observacion">{{product.observacion}}</td>
               
             <td >$ <span id="precioo"> {{product.price}}</span>   </td>
             <td>

@@ -8,13 +8,24 @@ import { Product } from '../../../models/product';
 
 // toastr
 import { ToastrService } from 'ngx-toastr';
+
+
+interface pago2 {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
+   pago: pago2[] = [
+    {value: 'Contado', viewValue: 'Contado'},
+    {value: 'Fiado', viewValue: 'Fiado'},
+    {value: 'Descuento', viewValue: 'Descuento'}
+  ];  
   constructor( public productService: ProductService,  private toastr: ToastrService) { }
 
   ngOnInit(){

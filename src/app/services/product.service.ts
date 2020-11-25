@@ -18,13 +18,19 @@ export class ProductService {
   
   getProducts()
   {
-    return this.productList = this.firebase.list('products');
+    return this.productList = this.firebase.list('monodatos');
   }
 
   insertProduct(product: Product)
   {
     this.productList.push({
       name: product.name,
+      localidad: product.localidad,
+      direccion: product.direccion,
+      pago: product.pago,
+      tipo: product.tipo,
+      ruta: product.ruta,
+      observacion: product.observacion,
       price: product.price
     });
   }
@@ -33,6 +39,12 @@ export class ProductService {
   {
     this.productList.update(product.$key, {
       name: product.name,
+      localidad: product.localidad,
+      direccion: product.direccion,
+      pago: product.pago,
+      tipo: product.tipo,
+      ruta: product.ruta,
+      observacion: product.observacion,
       price: product.price
     });
   }

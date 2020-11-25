@@ -1,9 +1,11 @@
-<div class="card mt-5">
-    <div class="card-body">
-     <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+
+<div class="card mt-5 bg-dark text-white">
+  <div class="card-body"> <h2>Nuevo cliente</h2>
+     <form  #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
            
             <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
-  
+      |
+
             <div class="form-group">
               <input 
                 type="text"
@@ -11,8 +13,60 @@
                 name="name"
                 #name="ngModel"
                 [(ngModel)]="productService.selectedProduct.name"
-                placeholder="Agrega un producto"
+                placeholder="Cliente"
                 >
+            </div>
+             
+            <div class="form-group">
+              <input 
+                type="text"
+                class="form-control"
+                name="direccion"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.direccion"
+                placeholder="Dirección"
+                >
+            </div>
+            <div class="form-group">
+              <label for="localidad">Localidad</label>
+                <select name="localidad" id="localidad" [(ngModel)]="productService.selectedProduct.localidad" class="form-control">
+                    <option value="Palomar" selected>Palomar</option>
+                    <option value="Haedo">Haedo</option>
+                    <option value="Caseros">Caseros</option>
+                    <option value="Ciudadela">Ciudadela</option>
+                </select>
+            </div>
+            <div class="form-group" >
+             <label for="pago">Pago</label>
+                <select  name="pago" id="pago" [(ngModel)]="productService.selectedProduct.pago" class="form-control">
+                    <option *ngFor="let pagos of pago" [value]="pagos.viewValue">
+                      {{pagos.value}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                      <label for="tipo">Tipo de cliente</label>
+                <select name="tipo" id="tipo" [(ngModel)]="productService.selectedProduct.tipo" class="form-control">
+                    <option value="Nuevo" selected>Nuevo</option>
+                    <option value="Viejo">Viejo</option>
+                    <option value="meses">Hace meses</option>
+                </select>
+            </div>
+            <div class="form-group">
+            
+            <label >Ruta</label>
+            <div class="form-control">
+              <label class="radio-inline" >
+                <input type="radio" value="1" name="ruta" [(ngModel)]="productService.selectedProduct.ruta" checked>1
+              </label>
+              <label class="radio-inline" class="ml-3" >
+                <input type="radio" value="2" name="ruta" [(ngModel)]="productService.selectedProduct.ruta">2
+              </label>
+            </div>
+          </div>
+            <div class="form-group">
+              <label for="observacion">Observación</label>
+              <textarea name="observacion" id="observacion" [(ngModel)]="productService.selectedProduct.observacion" cols="10" rows="3" class="form-control"></textarea>
             </div>
           
             <div class="form-group">
@@ -33,13 +87,17 @@
   
             <div class="form-group">
               <button class="btn btn-primary" type="submit">
-                  <i class="fas fa-plus-circle"></i> Agregar producto
+                  <i class="fas fa-plus-circle"></i> AGREGAR CLIENTE
               </button>
-              <button class="btn btn-secondary ml-3" type="reset" (click)="resetForm(productForm)">
+              <button class="btn btn-secondary ml-3 mt-2" type="reset" (click)="resetForm(productForm)">
                   <i class="fas fa-sync-alt"></i> Resetear
               </button>
             </div>
          
+<!--<div class="form-group">
+             <img src="../../../assets/img/s1.png" height="100" width="100">
+            </div>-->
+            
           </form>
     </div>
   </div>

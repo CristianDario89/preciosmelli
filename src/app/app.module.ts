@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { routing, appRoutingProvider } from './app.routing';
 
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // firebase
@@ -20,25 +21,31 @@ import { ProductService } from './services/product.service';
 // Toastr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { RutasComponent } from './components/rutas/rutas.component';
+import { ReciboComponent } from './components/recibo/recibo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    RutasComponent,
+    ReciboComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AppRoutingModule,
+    routing,
     FormsModule,
+   
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [
-    ProductService
+    ProductService,
+    appRoutingProvider
   ],
   bootstrap: [AppComponent]
 })

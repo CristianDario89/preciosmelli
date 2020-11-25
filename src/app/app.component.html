@@ -1,6 +1,18 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">ngProducts</a>
-</nav>
+<div>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Reparto de bidones </a>
+    
+    <div class="opciones">
+      <a [routerLink]="['/rutas']"  >Rutas</a>&nbsp;
+      <a [routerLink]="['/recibo']" >Recibo</a>
+    </div>
+    
+  
+    
+  </nav>
+   
+  <router-outlet></router-outlet>
+</div>
 
 <app-products></app-products>
  
