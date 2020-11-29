@@ -24,6 +24,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { RutasComponent } from './components/rutas/rutas.component';
 import { ReciboComponent } from './components/recibo/recibo.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { GoogleMapsModule } from '@angular/google-maps';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,8 @@ import { ReciboComponent } from './components/recibo/recibo.component';
     AngularFireModule.initializeApp(environment.firebase),
     routing,
     FormsModule,
-   
+    GoogleMapsModule,
+    NgbModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()

@@ -89,6 +89,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/modal.min.css",
              " ../node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []

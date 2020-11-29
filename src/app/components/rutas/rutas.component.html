@@ -1,1 +1,32 @@
-<p>rutas works!</p>
+
+ <div class=" modalnuevo" id="usuarios" >
+    <div class="usuario bg-dark text-center" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
+        <img src={{usuario.img2}} alt="" class="">
+        <div class="mx-2">{{usuario.id}}</div>
+        <div>{{usuario.nombre}}</div> 
+        
+      
+    </div>
+</div>   
+
+
+<ng-template #usuarioModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">{{usuario.nombre}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+          <div>ID: {{usuario.id}}</div>
+          <div >Cliente {{usuario.nombre}}</div>
+          <img src={{usuario.img}} alt="">
+          
+    </div>
+     
+    <div class="modal-footer">
+    </div>
+  </ng-template> 
+
+  
+<pre>{{ closeResult }}</pre>
