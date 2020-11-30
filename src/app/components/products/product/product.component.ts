@@ -22,9 +22,9 @@ interface pago2 {
 })
 export class ProductComponent implements OnInit {
    pago: pago2[] = [
-    {value: 'Contado', viewValue: 'Contado'},
-    {value: 'Fiado', viewValue: 'Fiado'},
-    {value: 'Descuento', viewValue: 'Descuento'}
+    {value: 'Dia', viewValue: 'Mes'},
+    {value: 'Semana', viewValue: 'Mes'},
+    {value: 'Mes', viewValue: 'Mes'}
   ];  
   constructor( public productService: ProductService,  private toastr: ToastrService) { }
 

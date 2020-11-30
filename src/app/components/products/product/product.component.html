@@ -4,7 +4,16 @@
      <form  #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
            
             <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
-      |
+      |  <div class="form-group">
+        <input 
+          type="number"
+          class="form-control"
+          name="id"
+          #name="ngModel"
+          [(ngModel)]="productService.selectedProduct.id"
+          placeholder="ID"
+          >
+      </div>
 
             <div class="form-group">
               <input 
@@ -34,7 +43,20 @@
                     <option value="Haedo">Haedo</option>
                     <option value="Caseros">Caseros</option>
                     <option value="Ciudadela">Ciudadela</option>
+                    <option value="SanMartin" selected>San martin</option>
+                    <option value="MartiCoronado">Martin Coronado</option>
+                    <option value="VillaBosch">Villa bosch</option>
                 </select>
+            </div>
+            <div class="form-group">
+              <input 
+                type="number"
+                class="form-control"
+                name="telefono"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.telefono"
+                placeholder="Telefono"
+                >
             </div>
             <div class="form-group" >
              <label for="pago">Pago</label>
@@ -45,16 +67,18 @@
                 </select>
             </div>
             <div class="form-group">
-                      <label for="tipo">Tipo de cliente</label>
+                      <label for="tipo">Dia</label>
                 <select name="tipo" id="tipo" [(ngModel)]="productService.selectedProduct.tipo" class="form-control">
-                    <option value="Nuevo" selected>Nuevo</option>
-                    <option value="Viejo">Viejo</option>
-                    <option value="meses">Hace meses</option>
+                    <option value="Lunes" selected>Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
                 </select>
             </div>
             <div class="form-group">
             
-            <label >Ruta</label>
+            <label >Bidon</label>
             <div class="form-control">
               <label class="radio-inline" >
                 <input type="radio" value="1" name="ruta" [(ngModel)]="productService.selectedProduct.ruta" checked>1
@@ -64,11 +88,16 @@
               </label>
             </div>
           </div>
-            <div class="form-group">
-              <label for="observacion">Observación</label>
-              <textarea name="observacion" id="observacion" [(ngModel)]="productService.selectedProduct.observacion" cols="10" rows="3" class="form-control"></textarea>
-            </div>
-          
+          <div class="form-group">
+            <label for="observacion">Cantidad</label>
+      <select name="observacion" id="observacion" [(ngModel)]="productService.selectedProduct.observacion" class="form-control">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+      </select>
+  </div>
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">

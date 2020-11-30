@@ -24,9 +24,11 @@ export class ProductService {
   insertProduct(product: Product)
   {
     this.productList.push({
+      id: product.id,
       name: product.name,
       localidad: product.localidad,
       direccion: product.direccion,
+      telefono: product.telefono,
       pago: product.pago,
       tipo: product.tipo,
       ruta: product.ruta,

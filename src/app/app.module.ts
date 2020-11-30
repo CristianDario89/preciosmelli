@@ -27,6 +27,8 @@ import { ReciboComponent } from './components/recibo/recibo.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { GoogleMapsModule } from '@angular/google-maps';
+import { LunesComponent } from './components/rutas/lunes/lunes.component';
+import { MartesComponent } from './components/rutas/martes/martes.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { GoogleMapsModule } from '@angular/google-maps';
     ProductListComponent,
     ProductComponent,
     RutasComponent,
-    ReciboComponent
+    ReciboComponent,
+    LunesComponent,
+    MartesComponent
   ],
   imports: [
     BrowserModule,
