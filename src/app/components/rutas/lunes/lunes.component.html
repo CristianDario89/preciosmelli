@@ -1,24 +1,33 @@
+<h2 class="text-center">MARTES</h2>
+
 <div class=" modalnuevo" id="usuarios" >
-    <div class="usuario bg-dark text-center" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
-        <img src={{usuario.img2}} alt="" class="">
-        <div class="mx-2">{{usuario.id}}</div>
-        <div>{{usuario.nombre}}</div> 
-        
+    <div class="usuario bg-dark" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
+      
+      <img src={{usuario.img2}} alt="" class="">
+      
+      <div class="wrapdatos">
+    
+         <div class="nombre">{{usuario.name}}</div>
+         <div><strong>{{usuario.direccion}}</strong></div>
+         <div class="localidad">{{usuario.localidad}}</div>
+      </div> 
       
     </div>
 </div>   
 
 <ng-template #usuarioModal let-modal>
     <div class="modal-header">
-      <h4 class="modal-title">{{usuario.nombre}}</h4>
+      <h4 class="modal-title">#{{usuario.id}} {{usuario.name}}</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-          <div>#{{usuario.id}}</div>
-          <div >Cliente: {{usuario.nombre}}</div>
-          <img src={{usuario.img}} alt="">
+          
+      <div><strong>Bidon:</strong> {{usuario.ruta}}</div>
+      <div><strong>Cantidad:</strong>  {{usuario.observacion}}</div>
+      <div><strong>Prestado:</strong> {{usuario.pago}}</div>
+      <img src={{usuario.img}} alt="">
           
     </div>
      
