@@ -29,6 +29,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LunesComponent } from './components/rutas/lunes/lunes.component';
 import { MartesComponent } from './components/rutas/martes/martes.component';
+import { MiercolesComponent } from './components/rutas/miercoles/miercoles.component';
+import { JuevesComponent } from './components/rutas/jueves/jueves.component';
+import { ViernesComponent } from './components/rutas/viernes/viernes.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { MartesComponent } from './components/rutas/martes/martes.component';
     RutasComponent,
     ReciboComponent,
     LunesComponent,
-    MartesComponent
+    MartesComponent,
+    MiercolesComponent,
+    JuevesComponent,
+    ViernesComponent
   ],
   imports: [
     BrowserModule,

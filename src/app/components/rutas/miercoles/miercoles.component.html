@@ -1,13 +1,12 @@
-<h2 class="text-center">SABADO</h2>
+<h2 class="text-center">Miercoles</h2>
 
 <div class=" modalnuevo" id="usuarios" >
-    <div class="usuario bg-dark text-center" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
-      
+    <div class="usuario bg-dark" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
       <!--  <img src={{usuario.img2}} alt="" class="">
-      -->  
+      -->    
       <div class="wrapdatos">
     
-         <div class="nombre"> {{usuario.name}}</div>
+         <div class="nombre">{{usuario.name}}</div>
          <div><strong>{{usuario.direccion}}</strong></div>
          <div class="localidad">{{usuario.localidad}}</div>
       </div> 
@@ -36,3 +35,4 @@
   </ng-template> 
 
 <pre>{{ closeResult }}</pre>
+
