@@ -109,7 +109,8 @@ export class JuevesComponent implements OnInit {
     closeResult = '';
     public fecha: any;
     ngOnInit() {
-      this.fecha = new Date();  
+      this.fecha = new Date(); 
+      $(".mifecha").css('color', 'gray'); 
     }
   
     ver(usuario: any, modal){
