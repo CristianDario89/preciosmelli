@@ -10,7 +10,7 @@ grid-column-gap: 10px;}
 #usuarios .usuario{
    color:white;border: 2px solid white;
     cursor: pointer; 
-    display: flex;width: 310px; 
+    display: flex;width: 100%;  
 }
 /**-----------------*/
 .wrapdatos{
@@ -22,7 +22,14 @@ grid-column-gap: 10px;}
 .nombre{
   color:yellowgreen;font-size: 20px;
 }
- 
+ /*----------------*/
+ .conruteo{
+  color:grey;
+  font-style: italic;
+}
+.telefono{
+  text-align: right;
+}
 @media (max-width: 800px) {
   .modal-body img{width: 100%;height: 390px;}
   #usuarios .usuario{ width: 230px; }

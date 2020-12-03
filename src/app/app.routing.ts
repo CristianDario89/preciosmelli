@@ -22,7 +22,6 @@ const appRoutes: Routes = [ //pa q se cumplan los formato de angular
     {path: 'rutas/miercoles', component: MiercolesComponent},
     {path: 'rutas/jueves', component: JuevesComponent},
     {path: 'rutas/viernes', component: ViernesComponent}
-   
 ];
 //Exportacion
 export const appRoutingProvider: any[] = [];

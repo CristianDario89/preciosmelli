@@ -8,7 +8,6 @@ import { ProductService } from '../../../services/product.service';
 
 // toastr
 import { ToastrService } from 'ngx-toastr';
-
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -23,6 +22,7 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     return this.productService.getProducts()
       .snapshotChanges().subscribe(item => {
         this.productList = [];
@@ -31,8 +31,10 @@ export class ProductListComponent implements OnInit {
           x["$key"] = element.key;
           this.productList.push(x as Product);
         });
-      });
+      }); 
+     
   }
+ 
 
   onEdit(product: Product) {
     this.productService.selectedProduct = Object.assign({}, product);

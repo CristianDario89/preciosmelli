@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+import * as $ from "jquery";
 @Component({
   selector: 'app-jueves',
   templateUrl: './jueves.component.html',
@@ -22,19 +24,8 @@ export class JuevesComponent implements OnInit {
       price : 280,
       ruta: "1",
       telefono: 1128279085,
-      tipo: "Jueves"
-    },
-   {
-    direccion: "Los paraísos 1516 ",
-      id: 26,
-      localidad: "VillaBosch",
-      name: "Estefania ",
-      observacion: "1",
-      pago: "Mes",
-      price: 190,
-      ruta: "2",
-      telefono: 1163989681,
-      tipo: "Jueves"
+      tipo: "Jueves",
+      img:'../../../assets/img/jueves/j1.png'
     },
     {
       direccion: "Miguel Cané 2155",
@@ -48,6 +39,19 @@ export class JuevesComponent implements OnInit {
       telefono: 25896322,
       tipo: "Jueves"
     },
+   {
+    direccion: "Los paraísos 1516 ",
+      id: 26,
+      localidad: "VillaBosch",
+      name: "Estefania ",
+      observacion: "1",
+      pago: "Mes",
+      price: 190,
+      ruta: "2",
+      telefono: 1163989681,
+      tipo: "Jueves",
+      img:'../../../assets/img/jueves/j2.png'
+    },
     {
       direccion : "Luis María Drago 2033",
       id : 32,
@@ -58,7 +62,8 @@ export class JuevesComponent implements OnInit {
       price : 240,
       ruta : "Bs 12Lts",
       telefono: 1154200986,
-      tipo: "Jueves"
+      tipo: "Jueves",
+      img:'../../../assets/img/jueves/j3.png'
     },
     {
       direccion : "Pedernera 1333",
@@ -70,7 +75,8 @@ export class JuevesComponent implements OnInit {
       price: 250,
       ruta: "2",
       telefono: 1150994959,
-      tipo: "Jueves"
+      tipo: "Jueves",
+      img:'../../../assets/img/jueves/j4.png'
     },
     {
       direccion : "Av. Libertador 2354 5to \"A\"",
@@ -94,14 +100,17 @@ export class JuevesComponent implements OnInit {
       price: 280,
       ruta: "B 12Lts",
       telefono: 1159968784,
-      tipo: "Jueves"
+      tipo: "Jueves",
+      img:'../../../assets/img/jueves/j5.png'
     }
   ] 
   
     constructor(private modalService: NgbModal) { }
     closeResult = '';
-  
-    ngOnInit() { }
+    public fecha: any;
+    ngOnInit() {
+      this.fecha = new Date();  
+    }
   
     ver(usuario: any, modal){
       this.usuario = usuario;

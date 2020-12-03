@@ -3,20 +3,16 @@
       <h6 class="text-center lista">
         Lista de clientes
       </h6>
-      <table class="table table-sm table-hover miform" >
+      <table class="table table-sm table-hover miform" id="bidones">
         <thead>
           <tr>
-            <td><strong>ID</strong></td>
-            <td>Nombre</td>
+            <td><strong>#</strong></td>
+            <!-- <td>Nombre</td>
             <td>Direccion</td>
-            
             <td>Localidad</td>
             <td>Teléfono</td>
-           
-            
-            <td>Día</td>
+            <td>Día</td>-->
             <td>Bidon</td>
-            
             <td>Cantidad</td>
             <td>Prestado</td>
             <td>Precio</td>
@@ -24,13 +20,13 @@
         </thead>
         <tbody>
           <tr *ngFor="let product of productList">
-            <td class="nombre">#0{{product.id}}</td>
-            <td class="nombre">{{product.name}}</td>
+            <td class="id" >#0{{product.id}}</td>
+        <!--  <td class="nombre">{{product.name}}</td>
             <td class="direccion">{{product.direccion}}</td>
             <td class="localidad">{{product.localidad}}</td>
-            <td class="nombre">{{product.telefono}}</td>
+            <td class="telefono">{{product.telefono}}</td>
            
-            <td class="tipo">{{product.tipo}}</td>
+            <td class="tipo">{{product.tipo}}</td>-->  
             <td class="ruta">{{product.ruta}}</td>
             <td class="observacion">{{product.observacion}}</td>
             <td class="pago">{{product.pago}}</td>
@@ -47,4 +43,4 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </div> 

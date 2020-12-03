@@ -1,5 +1,7 @@
-<h2 class="text-center">Jueves</h2>
-
+<h2 class="text-center"> <strong>JUEVES </strong> <span class="mifecha">{{fecha | date: 'shortDate' | uppercase}}</span></h2>
+ 
+<p class="text-center text-success"><span class="conruteo">Ruteo recomendado:</span> #25 - #30 - #26 - #32 - #34 - #43</p>
+<p class="text-center text-danger"><span class="conruteo">Faltan:</span> #30 - #36</p>
 <div class=" modalnuevo" id="usuarios" >
     <div class="usuario bg-dark" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
     <!--  <img src={{usuario.img2}} alt="" class="">
@@ -7,9 +9,9 @@
     
       <div class="wrapdatos">
     
-         <div class="nombre">{{usuario.name}}</div>
-         <div><strong>{{usuario.direccion}}</strong></div>
-         <div class="localidad">{{usuario.localidad}}</div>
+         <div class="nombre">#{{usuario.id}} {{usuario.name}}</div>
+         <div><strong>{{usuario.direccion}}</strong> - {{usuario.localidad}} </div>
+         <div class="telefono">{{usuario.telefono}}</div>
       </div> 
       
     </div>
