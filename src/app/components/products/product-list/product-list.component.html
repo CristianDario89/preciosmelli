@@ -20,17 +20,24 @@
         </thead>
         <tbody>
           <tr *ngFor="let product of productList">
-            <td class="id" >#0{{product.id}}</td>
+            <td class="id" *ngIf='product.id >= 1' 
+              [style.background]="product.id >= 46 ? 'black' : 'grey'"
+              [style.color]="product.id >= 46 ? 'white' : 'white'"> 
+              
+              0{{product.id}}
+           
+          </td>
         <!--  <td class="nombre">{{product.name}}</td>
             <td class="direccion">{{product.direccion}}</td>
             <td class="localidad">{{product.localidad}}</td>
             <td class="telefono">{{product.telefono}}</td>
-           
-            <td class="tipo">{{product.tipo}}</td>-->  
+            <td class="tipo">{{product.tipo}}</td>--> 
+
             <td class="ruta">{{product.ruta}}</td>
             <td class="observacion">{{product.observacion}}</td>
             <td class="pago">{{product.pago}}</td>
             <td >$ <span id="precioo"> {{product.price}}</span>   </td>
+
             <td>
               <a class="btn btn-secondary text-white mr-1" (click)="onEdit(product)">
                   <i class="far fa-edit"></i>

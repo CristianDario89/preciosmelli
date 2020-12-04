@@ -1,4 +1,4 @@
-<h2 class="text-center">Viernes</h2>
+<h2 class="text-center"><strong>VIERNES </strong><span class="mifecha">{{fecha | date: 'shortDate' | uppercase}}</span></h2>
 
 <div class=" modalnuevo" id="usuarios" >
     <div class="usuario bg-dark" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
@@ -8,7 +8,7 @@
       <div class="wrapdatos">
     
          <div class="nombre">#{{usuario.id}} {{usuario.name}}</div>
-         <div><strong>{{usuario.direccion}}</strong> - {{usuario.localidad}} </div>
+         <div><strong>{{usuario.direccion}}</strong> - <span class="locali">{{usuario.localidad}}</span>  </div>
          <div class="telefono">{{usuario.telefono}}</div>
          
       </div> 
@@ -37,4 +37,3 @@
   </ng-template> 
 
 <pre>{{ closeResult }}</pre>
-
