@@ -1,38 +1,57 @@
-<h2 class="text-center">SABADO</h2>
-
-<div class=" modalnuevo" id="usuarios" >
-    <div class="usuario bg-dark text-center" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
-      
-      <!--  <img src={{usuario.img2}} alt="" class="">
-      -->  
-      <div class="wrapdatos">
+<nav class="navbar navbar-dark bg-success">
+  <div class="opciones">
+    <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
+    <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
+    <a [routerLink]="['/rutas/jueves']" [routerLinkActive]="['active']">Jueves</a>
+    <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
+    <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
+  
+  </div>
+  
+  </nav>
     
-         <div class="nombre">#{{usuario.id}} {{usuario.name}}</div>
-         <div><strong>{{usuario.direccion}}</strong> - {{usuario.localidad}} </div>
-         <div class="telefono">{{usuario.telefono}}</div>
-      </div> 
-      
+  
+  <router-outlet></router-outlet>
+  <!---------------------------------------->
+  <div class="card">
+    <div class="card-body">
+      <h6 class="text-center lista">
+        CLIENTES
+      </h6>
+      <table class="table table-sm table-hover miform" id="bidones">
+        <thead>
+          <tr>
+            <td><strong>#</strong></td>
+            <td>Nombre</td>
+           <!--  <td>Direccion</td>
+            <td>Localidad</td>
+            <td>Teléfono</td>
+            <td>Día</td>-->
+            <td>Bidon</td>
+            <td>Cant</td>
+            <td>Pres</td>
+            <td>Precio</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList">
+            <ng-template [ngIf] = "product.tipo == 'Lunes'">
+  
+              <td class="id">  0{{product.id}}  </td>
+              <td class="nombre">{{product.name}}</td>
+                <!--  <td class="direccion">{{product.direccion}}</td>
+                 <td class="localidad">{{product.localidad}}</td>
+                 <td class="telefono">{{product.telefono}}</td>
+                 <td class="tipo">{{product.tipo}}</td>--> 
+       
+                 <td class="ruta">{{product.ruta}}</td>
+                 <td class="observacion">{{product.observacion}}</td>
+                 <td class="pago">{{product.pago}}</td>
+                 <td >$ <span id="precioo"> {{product.price}}</span>   </td>
+    </ng-template>  
+            </tr>
+        </tbody>
+      </table>
     </div>
-</div>   
-
-<ng-template #usuarioModal let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">#{{usuario.id}} {{usuario.name}}</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-          
-      <div><strong>Bidon:</strong> {{usuario.ruta}}</div>
-      <div><strong>Cantidad:</strong>  {{usuario.observacion}}</div>
-      <div><strong>Prestado:</strong> {{usuario.pago}}</div>
-      <img src={{usuario.img}} alt="">
-          
-    </div>
-     
-    <div class="modal-footer">
-    </div>
-  </ng-template> 
-
-<pre>{{ closeResult }}</pre>
+  </div>  
+  

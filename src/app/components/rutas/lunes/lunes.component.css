@@ -30,6 +30,23 @@ grid-column-gap: 10px;}
 .telefono{
   text-align: right;
 }
+
+ /*------*/
+ .opciones{
+  margin: auto;
+}
+.opciones a{
+color: rgb(238, 233, 227);
+margin-left: 10px;
+}
+.active {
+  background-color: black;  padding: 5px; 
+  text-shadow: 1px 1px 1px red,
+  -1px -1px 1px red;
+}
+.active a {
+  color: red;
+}
 @media (max-width: 800px) {
   .modal-body img{width: 100%;height: 390px;}
   #usuarios .usuario{ width: 230px; }

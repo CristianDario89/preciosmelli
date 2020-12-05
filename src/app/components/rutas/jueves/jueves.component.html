@@ -1,7 +1,15 @@
-<h2 class="text-center"> <strong>JUEVES </strong> <span class="mifecha">{{fecha | date: 'shortDate' | uppercase}}</span></h2>
- 
-<p class="text-center text-success"><span class="conruteo">Ruteo recomendado:</span> #25 - #30 - #26 - #32 - #34 - #43</p>
-<p class="text-center text-danger"><span class="conruteo">Faltan:</span> #30 - #36</p>
+<nav class="navbar navbar-dark bg-success">  
+<div class="opciones">
+  <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
+  <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
+  <a [routerLink]="['/rutas/jueves']"  [routerLinkActive]="['active']">Jueves</a>
+  <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
+  <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
+
+</div>
+
+</nav>
+  
 <div class=" modalnuevo" id="usuarios" >
     <div class="usuario bg-dark" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
     <!--  <img src={{usuario.img2}} alt="" class="">

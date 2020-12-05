@@ -31,6 +31,22 @@ grid-column-gap: 10px;}
 .telefono{
   text-align: right;padding-right: 5px;
 }
+/*------*/
+.opciones{
+ margin: auto;
+}
+.opciones a{
+color: rgb(238, 233, 227);
+margin-left: 10px;
+}
+.active {
+  background-color: black;  padding: 5px; 
+  text-shadow: 1px 1px 1px red,
+  -1px -1px 1px red;
+}
+.active a {
+  color: red;
+}
 /*-------------*/
 .locali{font-style: italic;}
 @media (max-width: 800px) {

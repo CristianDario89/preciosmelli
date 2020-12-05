@@ -8,7 +8,7 @@ import * as $ from "jquery";
   styleUrls: ['./viernes.component.css']
 })
 export class ViernesComponent implements OnInit {
-  public fecha: any;
+   
   usuario: any;
   usuarios: any[] = [
   /*  { id: 1, nombre:'Andres',img:'../../../assets/img/m1.png',img2:'../../../assets/img/p1.jpg' },
@@ -189,8 +189,7 @@ export class ViernesComponent implements OnInit {
     closeResult = '';
   
     ngOnInit() {
-      this.fecha = new Date(); 
-           $(".mifecha").css('color', 'gray'); 
+      
            }
   
     ver(usuario: any, modal){

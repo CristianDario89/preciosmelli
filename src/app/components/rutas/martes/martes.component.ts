@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-       
+import { Product } from '../../../models/product';
+// service
+import { ProductService } from '../../../services/product.service';       
 @Component({
   selector: 'app-martes',
   templateUrl: './martes.component.html',
   styleUrls: ['./martes.component.css']
 })
 export class MartesComponent implements OnInit {
-
+  productList: Product[];
   usuario: any;
   usuarios: any[] = [
    /* { id: 5, nombre:'Jean Carlos', img:'../../../assets/img/m2.png', img2:'../../../assets/img/p5.jpg'},
@@ -151,10 +152,20 @@ export class MartesComponent implements OnInit {
       }
   ] 
   
-    constructor(private modalService: NgbModal) { }
+    constructor(private productService: ProductService, private modalService: NgbModal) { }
     closeResult = '';
   
-    ngOnInit() { }
+    ngOnInit() { 
+      return this.productService.getProducts()
+      .snapshotChanges().subscribe(item => {
+        this.productList = [];
+        item.forEach(element => {
+          let x = element.payload.toJSON();
+          x["$key"] = element.key;
+          this.productList.push(x as Product);
+        });
+      }); 
+    }
   
     ver(usuario: any, modal){
       this.usuario = usuario;

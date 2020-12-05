@@ -32,6 +32,7 @@ import { MartesComponent } from './components/rutas/martes/martes.component';
 import { MiercolesComponent } from './components/rutas/miercoles/miercoles.component';
 import { JuevesComponent } from './components/rutas/jueves/jueves.component';
 import { ViernesComponent } from './components/rutas/viernes/viernes.component';
+import { MensajeComponent } from './components/mensaje/mensaje.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ViernesComponent } from './components/rutas/viernes/viernes.component';
     MartesComponent,
     MiercolesComponent,
     JuevesComponent,
-    ViernesComponent
+    ViernesComponent,
+    MensajeComponent
   ],
   imports: [
     BrowserModule,

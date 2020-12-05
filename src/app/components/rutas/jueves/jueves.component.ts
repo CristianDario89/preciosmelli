@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
-import * as $ from "jquery";
 @Component({
   selector: 'app-jueves',
   templateUrl: './jueves.component.html',
@@ -107,10 +106,9 @@ export class JuevesComponent implements OnInit {
   
     constructor(private modalService: NgbModal) { }
     closeResult = '';
-    public fecha: any;
+    
     ngOnInit() {
-      this.fecha = new Date(); 
-      $(".mifecha").css('color', 'gray'); 
+        
     }
   
     ver(usuario: any, modal){
