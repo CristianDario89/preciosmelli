@@ -33,7 +33,7 @@ import { MiercolesComponent } from './components/rutas/miercoles/miercoles.compo
 import { JuevesComponent } from './components/rutas/jueves/jueves.component';
 import { ViernesComponent } from './components/rutas/viernes/viernes.component';
 import { MensajeComponent } from './components/mensaje/mensaje.component';
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +47,7 @@ import { MensajeComponent } from './components/mensaje/mensaje.component';
     MiercolesComponent,
     JuevesComponent,
     ViernesComponent,
-    MensajeComponent
+    MensajeComponent 
   ],
   imports: [
     BrowserModule,

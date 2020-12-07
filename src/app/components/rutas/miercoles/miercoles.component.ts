@@ -7,7 +7,9 @@ import { Product } from '../../../models/product';
 
 // service
 import { ProductService } from '../../../services/product.service';
-    
+
+// toastr
+import { ToastrService } from 'ngx-toastr';    
 @Component({
   selector: 'app-miercoles',
   templateUrl: './miercoles.component.html',
@@ -107,7 +109,9 @@ export class MiercolesComponent implements OnInit {
     }
   ] 
   
-    constructor( private productService: ProductService,private modalService: NgbModal) { }
+    constructor( private productService: ProductService,
+      private modalService: NgbModal,
+      private toastr: ToastrService) { }
     closeResult = '';
   
     ngOnInit() { 
@@ -137,4 +141,17 @@ export class MiercolesComponent implements OnInit {
       }
     }
 
+    
+  onEdit(product: Product) {
+    this.productService.selectedProduct = Object.assign({}, product);
+  }
+
+  onDelete($key: string) {
+    if(confirm('Are you sure you want to delete it?')) {
+      this.productService.deleteProduct($key);
+      this.toastr.warning('Deleted Successfully', 'Product Removed');
+    }
+    
+
+    }
 }

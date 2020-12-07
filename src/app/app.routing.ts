@@ -10,11 +10,14 @@ import { MiercolesComponent } from './components/rutas/miercoles/miercoles.compo
 import { JuevesComponent } from './components/rutas/jueves/jueves.component';
 import { ViernesComponent } from './components/rutas/viernes/viernes.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProductComponent } from './components/products/product/product.component';
+
 //array de rutas
 const appRoutes: Routes = [ //pa q se cumplan los formato de angular
    /* {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},*/
     {path: '', component: ProductsComponent},
+    {path: 'editado', component: ProductComponent},
     {path: 'rutas', component: RutasComponent},
     {path: 'recibo', component: ReciboComponent},
     {path: 'rutas/lunes', component: LunesComponent},

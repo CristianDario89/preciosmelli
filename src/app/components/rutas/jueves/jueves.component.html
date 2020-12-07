@@ -5,11 +5,11 @@
   <a [routerLink]="['/rutas/jueves']"  [routerLinkActive]="['active']">Jueves</a>
   <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
   <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
-
 </div>
 
 </nav>
   
+
 <div class=" modalnuevo" id="usuarios" >
     <div class="usuario bg-dark" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
     <!--  <img src={{usuario.img2}} alt="" class="">

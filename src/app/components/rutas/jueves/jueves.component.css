@@ -11,7 +11,7 @@ grid-column-gap: 10px;}
 #usuarios .usuario{
    color:white;border: 2px solid white;
     cursor: pointer; 
-    display: flex;width: 100%; 
+    display: flex;width: 100%; padding: 3px;
 }
 /**-----------------*/
 .wrapdatos{
