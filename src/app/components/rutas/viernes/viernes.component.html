@@ -11,49 +11,46 @@
 
 </nav>
    
-<div class="wrapcitonuevo">
-
-    <div class="bg-dark usuario2" *ngFor="let usuario of usuarios">
-      
-        <div class="wrapdatos">
-    
-         <div class="nombre">#{{usuario.id}} {{usuario.name}}</div>
-         <div><strong>{{usuario.direccion}}</strong> - <span class="locali">{{usuario.localidad}}</span>  </div>
-         <div class="telefono">{{usuario.telefono}}</div>
-         
-        <div class="modalnuevo" id="usuarios">
-          <div class="usuario " (click)="ver(usuario, usuarioModal)">
+<div *ngFor="let product of productList; let i = index"   id="usu" >
+  <ng-template [ngIf] = "product.tipo == 'Viernes'"> 
+    <div class="usuario2 bg-dark" >
+      <div class="wrapdatos" [ngClass]="{'active2': selectedIdx == i}">
+        <div class="nombre" (click)="selectItem(i)">{{product.name}}</div>
+          <div><strong>{{product.direccion}}</strong> - <span class="locali">{{product.localidad}}</span>  </div>
+          <div class="telefono">{{product.telefono}}</div>
+           
+          <div class="modalnuevo" id="usuarios" >
+            <div class="usuario " (click)="ver(usuario, usuarioModal)">
+                <p class="p-2">VER MAPA</p>
+            </div>
             
-            <p class="p-2">VER MAPA</p>
-          </div>
-        </div>   
-    
-        <ng-template #usuarioModal let-modal>
-          <div class="modal-header">
-            <h4 class="modal-title"> #{{usuario.id}} {{usuario.name}}</h4>
-            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-                
-            <div><strong>Bidon:</strong> {{usuario.ruta}}</div>
-            <div><strong>Cantidad:</strong>  {{usuario.observacion}}</div>
-            <div><strong>Prestado:</strong> {{usuario.pago}}</div>
-            <img src={{usuario.img}} alt="">
-                
-          </div>
+          </div>   
           
-          <div class="modal-footer">
-          </div>
-        </ng-template> 
-    
-        <pre>{{ closeResult }}</pre>
-        </div> 
+          <ng-template #usuarioModal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title"> #{{product.id}} {{product.name}}</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                  
+              <div><strong>Bidon:</strong> {{product.ruta}}</div>
+              <div><strong>Cantidad:</strong>  {{product.observacion}}</div>
+              <div><strong>Prestado:</strong> {{product.pago}}</div>
+              <img src={{product.img}} alt="">
+                  
+            </div>
+            
+            <div class="modal-footer">
+            </div>
+          </ng-template> 
       
+          <pre>{{ closeResult }}</pre>
+      </div>
+         
+     
+   </div>
 
-
-    </div>
-
-   
+  </ng-template>  
 </div>
