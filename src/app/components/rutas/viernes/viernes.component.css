@@ -1,27 +1,21 @@
-
-.modal-body img{width: 470px;height: 400px;} 
-
-.usuario2 img{width: 110px;height: 100%;}
-#usu{   
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-}
+*{margin: 0; padding: 0;box-sizing: border-box;font-family: sans-serif;}
+.modal-body img{width: 100%;height: 400px;} 
+.wrapgral{
+  margin-top: 10px;margin-left: 5px;
+  display: flex;flex-wrap: wrap;
+}  
 .usuario2{
- width: 100%;
-   color:white;border: 2px solid blue;
+  color:white;border-right:5px solid white; 
   margin-bottom: 10px;padding: 10px; 
-}/*
-.wrapcitonuevo .usuario2:nth-child(2n) {
-  border: 2px solid darkblue;
-   */ 
-/**-----------------*/
+  width: 100%;
+  
+}
  
-.localidad{
-  font-style: italic;
-}
-.nombre{
-  color:yellowgreen;font-size: 20px;
-}
+.localidad{font-style: italic;}
+.nombre{color:black;text-shadow: 1px 1px 1px red;font-weight: 700;
+  text-transform: uppercase;
+  font-size: 25px;
+ }
  /*----------------*/
  .conruteo{
   color:grey;
@@ -32,7 +26,7 @@
 }
 /*------*/
 .opciones{
- margin: auto;
+ margin: auto;padding: 10px;
 }
 .opciones a{
 color: rgb(238, 233, 227);
@@ -46,21 +40,31 @@ margin-left: 10px;
   
 } 
 .active2{
-  background-color: red; padding: 15px 50px 5px 50px;
+  background-color: white;color: black;
+    padding:0 30px; 
 }
 /*-------------*/  
-.usuario p{background-color:black; width: 100px;cursor: pointer;}
+.usuario p{background-color:green; color: black;
+  width: 100px;cursor: pointer;
+ transform: translateY(-5px);
+}
+#usuarios{
+  display: inline-block;
+}
  
 /*-------------*/
 .locali{font-style: italic;}
-
+.atender{
+  transform: translateX(-5px);
+  display: inline-block;
+  cursor: pointer;
+   font-size: 24px;
+}
 @media (max-width: 800px) {
-  .modal-body img{width: 100%;height: 390px;}
-  #usu{   
-    display: grid;
-    grid-template-columns: 1fr;
-  grid-column-gap: 10px;
-   
-  }
+  .modal-body img{width: 100%;height: 330px;}
+  .wrapgral{
+    margin-top: 10px;margin-left: 5px;
+    display: flex; flex-direction: column;
+  } 
 } 
 

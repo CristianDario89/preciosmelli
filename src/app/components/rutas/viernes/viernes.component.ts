@@ -14,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ViernesComponent implements OnInit {
   productList: Product[]; 
   usuario: any;
+  mostrarOtros:false;
    
     constructor( private productService: ProductService,
       private modalService: NgbModal,

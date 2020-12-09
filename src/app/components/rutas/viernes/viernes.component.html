@@ -10,12 +10,15 @@
 </div>
 
 </nav>
-   
-<div *ngFor="let product of productList; let i = index"   id="usu" >
+ 
+<div class="wrapgral">
+  
+<div *ngFor="let product of productList; let i = index"  id="usu" >
   <ng-template [ngIf] = "product.tipo == 'Viernes'"> 
     <div class="usuario2 bg-dark" >
       <div class="wrapdatos" [ngClass]="{'active2': selectedIdx == i}">
-        <div class="nombre" (click)="selectItem(i)">{{product.name}}</div>
+
+        <div class="nombre"> <p class="atender" (click)="selectItem(i)"><i class="fas fa-dot-circle"></i></p>{{product.name}}</div>
           <div><strong>{{product.direccion}}</strong> - <span class="locali">{{product.localidad}}</span>  </div>
           <div class="telefono">{{product.telefono}}</div>
            
@@ -23,17 +26,16 @@
             <div class="usuario " (click)="ver(usuario, usuarioModal)">
                 <p class="p-2">VER MAPA</p>
             </div>
-            
           </div>   
-          
+        
           <ng-template #usuarioModal let-modal>
             <div class="modal-header">
-              <h4 class="modal-title"> #{{product.id}} {{product.name}}</h4>
+              <h4 class="modal-title pl-3"> #{{product.id}} {{product.name}}</h4>
               <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body p-3">
                   
               <div><strong>Bidon:</strong> {{product.ruta}}</div>
               <div><strong>Cantidad:</strong>  {{product.observacion}}</div>
@@ -42,15 +44,15 @@
                   
             </div>
             
-            <div class="modal-footer">
-            </div>
+            <div class="modal-footer"></div>
           </ng-template> 
       
           <pre>{{ closeResult }}</pre>
       </div>
          
      
-   </div>
+    </div>
 
   </ng-template>  
+</div>
 </div>
