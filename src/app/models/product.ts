@@ -9,5 +9,6 @@ export class Product {
     tipo: string;
     ruta: string;
     observacion: string;
+    semaforo: string;
     price: number;
 }

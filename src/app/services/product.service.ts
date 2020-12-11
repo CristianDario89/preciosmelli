@@ -33,6 +33,7 @@ export class ProductService {
       tipo: product.tipo,
       ruta: product.ruta,
       observacion: product.observacion,
+      semaforo: product.semaforo,
       price: product.price
     });
   }
@@ -47,6 +48,7 @@ export class ProductService {
       tipo: product.tipo,
       ruta: product.ruta,
       observacion: product.observacion,
+      semaforo: product.semaforo,
       price: product.price
     });
   }

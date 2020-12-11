@@ -14,21 +14,41 @@
 <div class="wrapgral">
   
 <div *ngFor="let product of productList; let i = index"  id="usu" >
+
   <ng-template [ngIf] = "product.tipo == 'Viernes'"> 
     <div class="usuario2 bg-dark" >
       <div class="wrapdatos" [ngClass]="{'active2': selectedIdx == i}">
-
-        <div class="nombre"> <p class="atender" (click)="selectItem(i)"><i class="fas fa-dot-circle"></i></p>{{product.name}}</div>
-          <div><strong>{{product.direccion}}</strong> - <span class="locali">{{product.localidad}}</span>  </div>
-          <div class="telefono">{{product.telefono}}</div>
-           
-          <div class="modalnuevo" id="usuarios" >
-            <div class="usuario " (click)="ver(usuario, usuarioModal)">
-                <p class="p-2">VER MAPA</p>
-            </div>
-          </div>   
+        <strong 
+                [class.altoPrecio]="product.pago == '0'"
+                [ngClass]="{
+                    'fondoRojo': product.semaforo == 'rojo',
+                    'fondoAmarillo': product.semaforo == 'amarillo'
+                }"
+                >
+              
+        </strong>
         
-          <ng-template #usuarioModal let-modal>
+        <div class="nombre"> 
+          <p class="atender" (click)="selectItem(i)"><i class="fas fa-dot-circle"></i></p>
+          
+          {{product.name}}
+          <span *ngIf="product.ruta > 1"
+            [style.color]="product.ruta > 1 ? 'red' : 'black'"
+            [style.fontSize]="product.ruta > 1 ? '16px' : '7px'"
+            > Te debe Amigo
+          </span>
+        </div>  
+        
+        <div class="mt-1"><strong>{{product.direccion}}</strong> - <span class="locali">{{product.localidad}}</span>  </div>
+        <div class="telefono"> {{product.telefono}} </div>
+           
+        <div class="modalnuevo" id="usuarios" >
+            <div class="usuario " (click)="ver(usuario, usuarioModal)">
+                <p class="p-2">VER DATOS</p>
+            </div>
+        </div>   
+        
+        <ng-template #usuarioModal let-modal>
             <div class="modal-header">
               <h4 class="modal-title pl-3"> #{{product.id}} {{product.name}}</h4>
               <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -45,7 +65,7 @@
             </div>
             
             <div class="modal-footer"></div>
-          </ng-template> 
+        </ng-template> 
       
           <pre>{{ closeResult }}</pre>
       </div>
