@@ -1,4 +1,5 @@
 <nav class="navbar navbar-dark bg-success">
+
   <div class="opciones">
     <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
     <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
@@ -9,49 +10,63 @@
   </div>
   
   </nav>
+   
+  <div class="wrapgral">
     
+  <div *ngFor="let product of productList; let i = index"  id="usu" >
   
-  <router-outlet></router-outlet>
-  <!---------------------------------------->
-  <div class="card">
-    <div class="card-body">
-      <h6 class="text-center lista">
-        CLIENTES
-      </h6>
-      <table class="table table-sm table-hover miform" id="bidones">
-        <thead>
-          <tr>
-            <td><strong>#</strong></td>
-            <td>Nombre</td>
-           <!--  <td>Direccion</td>
-            <td>Localidad</td>
-            <td>Teléfono</td>
-            <td>Día</td>-->
-            <td>Bidon</td>
-            <td>Cant</td>
-            <td>Pres</td>
-            <td>Precio</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of productList">
-            <ng-template [ngIf] = "product.tipo == 'Lunes'">
-  
-              <td class="id">  0{{product.id}}  </td>
-              <td class="nombre">{{product.name}}</td>
-                <!--  <td class="direccion">{{product.direccion}}</td>
-                 <td class="localidad">{{product.localidad}}</td>
-                 <td class="telefono">{{product.telefono}}</td>
-                 <td class="tipo">{{product.tipo}}</td>--> 
+    <ng-template [ngIf] = "product.tipo == 'Lunes'"> 
+      <div class="usuario2" [class.altoPrecio]="product.prestado >= '0'"
+        [ngClass]="{
+            'fondoRojo': product.semaforo == 'rojo',
+            'fondoAmarillo': product.semaforo == 'amarillo'
+        }">
+        <div class="wrapdatos" [ngClass]="{'active2': selectedIdx == i}">
+          <div class="nombre"> 
+            <p (click)="selectItem(i)"><i class="fas fa-dot-circle punto"></i>{{product.name}}
+              <span *ngIf="product.prestado > 1"
+                [style.color]="product.prestado > 1 ? 'green' : 'blue'"
+                [style.fontSize]="product.prestado > 1 ? '16px' : '7px'"
+                > Te debe Amigo
+              </span>
+            </p>
+          </div>  
+          
+          <div class="mt-1"><strong>{{product.direccion}}</strong> - <span class="locali">{{product.localidad}}</span>  </div>
+          <div class="telefono"> {{product.telefono}} </div>
+             
+          <div class="modalnuevo" id="usuarios" >
+              <div class="usuario " (click)="ver(usuario, usuarioModal)">
+                  <p class="p-2">VER DATOS</p>
+              </div>
+          </div>   
+          
+          <ng-template #usuarioModal let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title pl-3"> #{{product.id}} {{product.name}}</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body p-3">
+                    
+                <div><strong>Bidon:</strong> {{product.ruta}}</div>
+                <div><strong>Cantidad:</strong>  {{product.cantidad}}</div>
+                <div><strong>Prestado:</strong> {{product.prestado}}</div>
+                <img src={{product.img}} alt="">
+                    
+              </div>
+              
+              <div class="modal-footer"></div>
+          </ng-template> 
+        
+            <pre>{{ closeResult }}</pre>
+        </div>
+           
        
-                 <td class="ruta">{{product.ruta}}</td>
-                 <td class="observacion">{{product.observacion}}</td>
-                 <td class="pago">{{product.pago}}</td>
-                 <td >$ <span id="precioo"> {{product.price}}</span>   </td>
+      </div>
+  
     </ng-template>  
-            </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>  
+  </div>
+  </div>
   

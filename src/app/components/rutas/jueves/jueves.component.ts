@@ -1,115 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
+import { Product } from '../../../models/product';
+// service
+import { ProductService } from '../../../services/product.service';
+// toastr
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-jueves',
   templateUrl: './jueves.component.html',
   styleUrls: ['./jueves.component.css']
 })
 export class JuevesComponent implements OnInit {
+  productList: Product[]; 
   usuario: any;
-  usuarios: any[] = [
-  /*  { id: 1, nombre:'Andres',img:'../../../assets/img/m1.png',img2:'../../../assets/img/p1.jpg' },
-    { id: 2, nombre:'Tomy', img:'../../../assets/img/m2.png', img2:'../../../assets/img/p2.jpg'},
-    { id: 3, nombre:'Cristiano',img:'../../../assets/img/m1.png',img2:'../../../assets/img/p3.jpg' },
-    { id: 4, nombre:'Lio',img:'../../../assets/img/m1.png',img2:'../../../assets/img/p4.jpg' }*/
-    {
-      direccion : "Fasola 431 Dpto B",
-      id: 25,
-      localidad : "Haedo",
-      name: "Gastón",
-      observacion: "1",
-      pago: "Mes",
-      price : 280,
-      ruta: "1",
-      telefono: 1128279085,
-      tipo: "Jueves",
-      img:'../../../assets/img/jueves/j1.png'
-    },
-    {
-      direccion: "Miguel Cané 2155",
-      id : 30,
-      localidad : "VillaBosch",
-      name : "Ana",
-      observacion : "1",
-      pago : "Mes",
-      price : 320,
-      ruta: "1",
-      telefono: 25896322,
-      tipo: "Jueves"
-    },
-   {
-    direccion: "Los paraísos 1516 ",
-      id: 26,
-      localidad: "VillaBosch",
-      name: "Estefania ",
-      observacion: "1",
-      pago: "Mes",
-      price: 190,
-      ruta: "2",
-      telefono: 1163989681,
-      tipo: "Jueves",
-      img:'../../../assets/img/jueves/j2.png'
-    },
-    {
-      direccion : "Luis María Drago 2033",
-      id : 32,
-      localidad : "Villa Adelina",
-      name: "Mercedes",
-      observacion : "2",
-      pago : "1",
-      price : 240,
-      ruta : "Bs 12Lts",
-      telefono: 1154200986,
-      tipo: "Jueves",
-      img:'../../../assets/img/jueves/j3.png'
-    },
-    {
-      direccion : "Pedernera 1333",
-      id : 34,
-      localidad : "VillaBosch",
-      name : "Liliana ",
-      observacion : "1",
-      pago : "Mes",
-      price: 250,
-      ruta: "2",
-      telefono: 1150994959,
-      tipo: "Jueves",
-      img:'../../../assets/img/jueves/j4.png'
-    },
-    {
-      direccion : "Av. Libertador 2354 5to \"A\"",
-      id : 36,
-      localidad : "Caseros",
-      name: "Cristina ",
-      observacion : "3",
-      pago : "1",
-      price: 280,
-      ruta: "B 12Lts",
-      telefono : 1168510200,
-      tipo : "Jueves"
-    },
-    {
-      direccion: "Martina Céspedes 710",
-      id: 43,
-      localidad: "Villa Adelina",
-      name: "Andrea",
-      observacion : "2",
-      pago : "1",
-      price: 280,
-      ruta: "B 12Lts",
-      telefono: 1159968784,
-      tipo: "Jueves",
-      img:'../../../assets/img/jueves/j5.png'
-    }
-  ] 
-  
-    constructor(private modalService: NgbModal) { }
+  mostrarOtros:false;
+   
+    constructor( private productService: ProductService,
+      private modalService: NgbModal,
+      private toastr: ToastrService) { }
     closeResult = '';
-    
+  
     ngOnInit() {
-        
-    }
+              return this.productService.getProducts()
+              .snapshotChanges().subscribe(item => {
+                this.productList = [];
+                item.forEach(element => {
+                  let x = element.payload.toJSON();
+                  x["$key"] = element.key;
+                  this.productList.push(x as Product);
+                });
+              }); 
+           }
   
     ver(usuario: any, modal){
       this.usuario = usuario;
@@ -125,4 +46,10 @@ export class JuevesComponent implements OnInit {
         return `with: ${reason}`;
       }
     }
+  
+    selectedIdx = 0;
+
+    selectItem(index):void {
+        this.selectedIdx = index;
+    } 
 }

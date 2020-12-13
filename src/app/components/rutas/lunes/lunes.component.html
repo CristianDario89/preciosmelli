@@ -1,50 +1,74 @@
 <nav class="navbar navbar-dark bg-success">
-<div class="opciones">
-  <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
-  <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
-  <a [routerLink]="['/rutas/jueves']" [routerLinkActive]="['active']">Jueves</a>
-  <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
-  <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
 
-</div>
-
-</nav>
+  <div class="opciones">
+    <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
+    <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
+    <a [routerLink]="['/rutas/jueves']" [routerLinkActive]="['active']">Jueves</a>
+    <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
+    <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
   
-
-<router-outlet></router-outlet>
-<!---------------------------------------->
-<div class=" modalnuevo" id="usuarios" >
-    <div class="usuario bg-dark" (click)="ver(usuario, usuarioModal)" *ngFor="let usuario of usuarios">
-      <!--  <img src={{usuario.img2}} alt="" class="">
-      -->  
-      <div class="wrapdatos">
+  </div>
+  
+  </nav>
+   
+  <div class="wrapgral">
     
-         <div class="nombre">#{{usuario.id}} {{usuario.name}}</div>
-         <div><strong>{{usuario.direccion}}</strong> - {{usuario.localidad}} </div>
-         <div class="telefono">{{usuario.telefono}}</div>
-      </div> 
-      
-    </div>
-</div>   
+  <div *ngFor="let product of productList; let i = index"  id="usu" >
+  
+    <ng-template [ngIf] = "product.tipo == 'Martes'"> 
+      <div class="usuario2" [class.altoPrecio]="product.prestado >= '0'"
+        [ngClass]="{
+            'fondoRojo': product.semaforo == 'rojo',
+            'fondoAmarillo': product.semaforo == 'amarillo'
+        }">
 
-<ng-template #usuarioModal let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">#{{usuario.id}} {{usuario.name}}</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
+        <div class="wrapdatos" [ngClass]="{'active2': selectedIdx == i}">
+          <div class="nombre"> 
+            <p (click)="selectItem(i)"><i class="fas fa-dot-circle punto"></i>{{product.name}}
+              <span *ngIf="product.prestado > 1"
+                [style.color]="product.prestado > 1 ? 'blue' : 'blue'"
+                [style.fontSize]="product.prestado > 1 ? '16px' : '7px'"
+                > Te debe Amigo
+              </span>
+            </p>
+            
+          </div>  
           
-      <div><strong>Bidon:</strong> {{usuario.ruta}}</div>
-      <div><strong>Cantidad:</strong>  {{usuario.observacion}}</div>
-      <div><strong>Prestado:</strong> {{usuario.pago}}</div>
-      <img src={{usuario.img}} alt="">
+          <div class="mt-1"><strong>{{product.direccion}}</strong> - <span class="locali">{{product.localidad}}</span>  </div>
+          <div class="telefono"> {{product.telefono}} </div>
+             
+          <div class="modalnuevo" id="usuarios" >
+              <div class="usuario " (click)="ver(usuario, usuarioModal)">
+                  <p class="p-2">VER DATOS</p>
+              </div>
+          </div>   
           
-    </div>
-     
-    <div class="modal-footer">
-    </div>
-  </ng-template> 
-
-<pre>{{ closeResult }}</pre>
+          <ng-template #usuarioModal let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title pl-3"> #{{product.id}} {{product.name}}</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body p-3">
+                    
+                <div><strong>Bidon:</strong> {{product.ruta}}</div>
+                <div><strong>Cantidad:</strong>  {{product.cantidad}}</div>
+                <div><strong>Prestado:</strong> {{product.prestado}}</div>
+                <img src={{product.img}} alt="">
+                    
+              </div>
+              
+              <div class="modal-footer"></div>
+          </ng-template> 
+        
+            <pre>{{ closeResult }}</pre>
+        </div>
+           
+       
+      </div>
+  
+    </ng-template>  
+  </div>
+  </div>
+  

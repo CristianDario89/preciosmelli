@@ -29,10 +29,10 @@ export class ProductService {
       localidad: product.localidad,
       direccion: product.direccion,
       telefono: product.telefono,
-      pago: product.pago,
+      prestado: product.prestado,
       tipo: product.tipo,
       ruta: product.ruta,
-      observacion: product.observacion,
+      cantidad: product.cantidad,
       semaforo: product.semaforo,
       price: product.price
     });
@@ -44,10 +44,10 @@ export class ProductService {
       name: product.name,
       localidad: product.localidad,
       direccion: product.direccion,
-      pago: product.pago,
+      prestado: product.prestado,
       tipo: product.tipo,
       ruta: product.ruta,
-      observacion: product.observacion,
+      cantidad: product.cantidad,
       semaforo: product.semaforo,
       price: product.price
     });

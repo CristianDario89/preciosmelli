@@ -3,7 +3,6 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Product } from '../../../models/product';
 // service
 import { ProductService } from '../../../services/product.service';
-
 // toastr
 import { ToastrService } from 'ngx-toastr';  
 @Component({

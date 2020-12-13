@@ -5,10 +5,10 @@ export class Product {
     direccion: string;
     localidad: string;
     telefono: number;
-    pago: string;
+    prestado: string;
     tipo: string;
     ruta: string;
-    observacion: string;
+    cantidad: string;
     semaforo: string;
     price: number;
 }

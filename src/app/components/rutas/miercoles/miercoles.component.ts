@@ -16,28 +16,29 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./miercoles.component.css']
 })
 export class MiercolesComponent implements OnInit {
-  productList: Product[];
+  productList: Product[]; 
+  usuario: any;
+  mostrarOtros:false;
    
-  
     constructor( private productService: ProductService,
       private modalService: NgbModal,
       private toastr: ToastrService) { }
     closeResult = '';
   
-    ngOnInit() { 
-      return this.productService.getProducts()
-      .snapshotChanges().subscribe(item => {
-        this.productList = [];
-        item.forEach(element => {
-          let x = element.payload.toJSON();
-          x["$key"] = element.key;
-          this.productList.push(x as Product);
-        });
-      }); 
-    }
+    ngOnInit() {
+              return this.productService.getProducts()
+              .snapshotChanges().subscribe(item => {
+                this.productList = [];
+                item.forEach(element => {
+                  let x = element.payload.toJSON();
+                  x["$key"] = element.key;
+                  this.productList.push(x as Product);
+                });
+              }); 
+           }
   
-    ver( modal){
-      
+    ver(usuario: any, modal){
+      this.usuario = usuario;
       this.modalService.open(modal);
     }
   
@@ -50,18 +51,10 @@ export class MiercolesComponent implements OnInit {
         return `with: ${reason}`;
       }
     }
+  
+    selectedIdx = 0;
 
-    
-  onEdit(product: Product) {
-    this.productService.selectedProduct = Object.assign({}, product);
-  }
-
-  onDelete($key: string) {
-    if(confirm('Are you sure you want to delete it?')) {
-      this.productService.deleteProduct($key);
-      this.toastr.warning('Deleted Successfully', 'Product Removed');
-    }
-    
-
-    }
+    selectItem(index):void {
+        this.selectedIdx = index;
+    } 
 }

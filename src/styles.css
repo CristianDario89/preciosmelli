@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+*{margin: 0; padding: 0;box-sizing: border-box;font-family: sans-serif;}
+.wrapgral{
+  margin-top: 10px;margin-left: 5px;
+  display: flex;flex-wrap: wrap;justify-content: center;
+}  
+.usuario2{
+  color:black;border:1px solid black;  
+  margin-bottom: 10px;padding: 10px; 
+  width: 100%; height: 170px; 
+}
+
+#usuarios{display: inline-block;}
+.wrapdatos{padding: 0 8px;width: 300px ;line-height: 24px; }
+
+ /*----------------*/
+.modal-body img{width: 100%;height: 400px;} 
+
+.localidad{font-style: italic;}
+.nombre{font-weight: 700;
+  text-transform: uppercase;
+  font-size: 25px; 
+ }
+ .conruteo{color:grey;font-style: italic;}
+.telefono{ padding-right: 5px;}
+/*------*/
+.opciones{margin: auto;padding: 10px;}
+.opciones a{color: rgb(238, 233, 227);margin-left: 10px;}
+.active a {color: red;}
+.active {background-color: black;  padding: 5px; } 
+.active2{background-color: black;color: white;padding-top: 10px;
+   }
+/*-------------*/  
+.usuario p{background-color:black; color: WHITE;
+  width: 110px;cursor: pointer; 
+ transform: translateY(2px)scale(0.9);
+}
+/*-------------*/
+.locali{font-style: italic;}
+/*---------------*/
+.altoPrecio{
+padding: 16px;
+display: inline-block;
+ font-size: 16px; } 
+
+.fondoRojo{background-color: red;} 
+.fondoAmarillo{background-color: yellow;} 
+/*--------------*/
+.punto{cursor: pointer;font-size: 14px;padding-right: 4px;}
+@media (max-width: 800px) {
+  .modal-body img{width: 100%;height: 330px;}
+  .wrapgral{
+    margin-top: 10px;margin-left: 5px;text-align: center;
+    display: flex; flex-direction: column;align-items: center;
+  } 
+   #usu{width: 318px;}
+  
+} 
+

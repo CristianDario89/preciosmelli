@@ -10,7 +10,7 @@ import { Product } from '../../../models/product';
 import { ToastrService } from 'ngx-toastr';
 
 
-interface pago2 {
+interface prestado2 {
   value: string;
   viewValue: string;
 }
@@ -21,7 +21,7 @@ interface pago2 {
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-   pago: pago2[] = [
+   prestado: prestado2[] = [
     {value: 'Dia', viewValue: 'Mes'},
     {value: 'Semana', viewValue: 'Mes'},
     {value: 'Mes', viewValue: 'Mes'}

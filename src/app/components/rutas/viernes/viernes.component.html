@@ -16,25 +16,17 @@
 <div *ngFor="let product of productList; let i = index"  id="usu" >
 
   <ng-template [ngIf] = "product.tipo == 'Viernes'"> 
-    <div class="usuario2 bg-dark" >
+    <div class="usuario2" [class.altoPrecio]="product.prestado >= '0'"
+      [ngClass]="{
+          'fondoRojo': product.semaforo == 'rojo',
+          'fondoAmarillo': product.semaforo == 'amarillo'
+      }">
       <div class="wrapdatos" [ngClass]="{'active2': selectedIdx == i}">
-        <strong 
-                [class.altoPrecio]="product.pago == '0'"
-                [ngClass]="{
-                    'fondoRojo': product.semaforo == 'rojo',
-                    'fondoAmarillo': product.semaforo == 'amarillo'
-                }"
-                >
-              
-        </strong>
-        
         <div class="nombre"> 
-          <p class="atender" (click)="selectItem(i)"><i class="fas fa-dot-circle"></i></p>
-          
-          {{product.name}}
-          <span *ngIf="product.ruta > 1"
-            [style.color]="product.ruta > 1 ? 'red' : 'black'"
-            [style.fontSize]="product.ruta > 1 ? '16px' : '7px'"
+          <p (click)="selectItem(i)"><i class="fas fa-dot-circle punto"></i>{{product.name}}</p>
+          <span *ngIf="product.prestado > 1"
+            [style.color]="product.prestado > 1 ? 'red' : 'black'"
+            [style.fontSize]="product.prestado > 1 ? '16px' : '7px'"
             > Te debe Amigo
           </span>
         </div>  
@@ -58,8 +50,8 @@
             <div class="modal-body p-3">
                   
               <div><strong>Bidon:</strong> {{product.ruta}}</div>
-              <div><strong>Cantidad:</strong>  {{product.observacion}}</div>
-              <div><strong>Prestado:</strong> {{product.pago}}</div>
+              <div><strong>Cantidad:</strong>  {{product.cantidad}}</div>
+              <div><strong>Prestado:</strong> {{product.prestado}}</div>
               <img src={{product.img}} alt="">
                   
             </div>
