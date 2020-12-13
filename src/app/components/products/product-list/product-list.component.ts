@@ -8,6 +8,8 @@ import { ProductService } from '../../../services/product.service';
 
 // toastr
 import { ToastrService } from 'ngx-toastr';
+
+import * as $ from "jquery";
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -38,13 +40,18 @@ export class ProductListComponent implements OnInit {
 
   onEdit(product: Product) {
     this.productService.selectedProduct = Object.assign({}, product);
+    this.goToEdit();
   }
 
   onDelete($key: string) {
-    if(confirm('Are you sure you want to delete it?')) {
+    if(confirm('Estas seguro que desea borrar este cliente?')) {
       this.productService.deleteProduct($key);
-      this.toastr.warning('Deleted Successfully', 'Product Removed');
+      this.toastr.warning('Borrado Exitosamente', 'Cliente borrado');
     }
+  }
+
+  goToEdit(){
+    document.getElementById("bajando").scrollIntoView();
   }
 
 }

@@ -21,6 +21,7 @@ import { ProductService } from './services/product.service';
 // Toastr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+
 import { RutasComponent } from './components/rutas/rutas.component';
 import { ReciboComponent } from './components/recibo/recibo.component';
 

@@ -40,7 +40,7 @@ export class ProductComponent implements OnInit {
   else
   this.productService.updateProduct(productForm.value);
   this.resetForm(productForm);
-  this.toastr.success('Sucessful Operation', 'Product Registered');
+  this.toastr.success('Operación exitosa', 'Cliente editado');
   }
 
   
