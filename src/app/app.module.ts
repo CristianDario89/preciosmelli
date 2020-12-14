@@ -34,7 +34,10 @@ import { MiercolesComponent } from './components/rutas/miercoles/miercoles.compo
 import { JuevesComponent } from './components/rutas/jueves/jueves.component';
 import { ViernesComponent } from './components/rutas/viernes/viernes.component';
 import { MensajeComponent } from './components/mensaje/mensaje.component';
- 
+
+import { SidebarModule } from 'ng-sidebar';
+import { AlertasComponent } from './components/sidebar/alertas/alertas.component';
+import { PrestamosComponent } from './components/sidebar/prestamos/prestamos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,9 @@ import { MensajeComponent } from './components/mensaje/mensaje.component';
     MiercolesComponent,
     JuevesComponent,
     ViernesComponent,
-    MensajeComponent 
+    MensajeComponent,
+    AlertasComponent,
+    PrestamosComponent 
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,7 @@ import { MensajeComponent } from './components/mensaje/mensaje.component';
     NgbModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    SidebarModule.forRoot(),
     ToastrModule.forRoot()
   ],
   providers: [

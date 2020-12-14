@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'listadeproductos';
+  opened= false;
+  title = 'Reparto de Bidones';
+
+  toggleSidebar(){
+    this.opened = !this.opened;
+  }
 }

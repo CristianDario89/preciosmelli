@@ -52,4 +52,13 @@ export class LunesComponent implements OnInit {
     selectItem(index):void {
         this.selectedIdx = index;
     } 
+     
+  onEdit(product: Product) {
+    this.productService.selectedProduct = Object.assign({}, product);
+    this.goToEdit();
+  }
+  
+  goToEdit(){
+    document.getElementById("bajando").scrollIntoView();
+  }
 }
