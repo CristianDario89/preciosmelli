@@ -79,7 +79,7 @@
             <div class="form-group">
             
             <label >Bidon</label>
-            <div class="form-control">
+            <div class="form-control" id="bajando">
               <label class="radio-inline" >
                 <input type="radio" value="Bs 12Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta" checked>Bs 12Lts
               </label>
@@ -148,7 +148,7 @@
       
     </div>
   </div>
-
+ 
   <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -167,10 +167,10 @@
   
   <div class="form-group">
               <button class="btn btn-primary" type="submit">
-                  <i class="fas fa-plus-circle"></i> AGREGAR CLIENTE
+                  <i class="fas fa-plus-circle"></i>  
               </button>
-              <button class="btn btn-secondary ml-3 mt-2" type="reset" (click)="resetForm(productForm)">
-                  <i class="fas fa-sync-alt"></i> Resetear
+              <button class="btn btn-secondary ml-3 " type="reset" (click)="resetForm(productForm)">
+                  <i class="fas fa-sync-alt"></i> 
               </button>
             </div>
          

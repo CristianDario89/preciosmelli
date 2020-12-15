@@ -13,7 +13,7 @@
  
 <div class="wrapgral">
   
-<div *ngFor="let product of productList; let i = index"  id="usu" >
+<div *ngFor="let product of productList; let i = index"  id="usu"  >
 
   <ng-template [ngIf] = "product.tipo == 'Viernes'"> 
     <div class="usuario2" [class.altoPrecio]="product.prestado >= '0'"
@@ -27,7 +27,7 @@
           <span *ngIf="product.prestado > 1"
             [style.color]="product.prestado > 1 ? 'red' : 'black'"
             [style.fontSize]="product.prestado > 1 ? '16px' : '7px'"
-            > Te debe Amigo
+            > Te debe
           </span>
         </div>  
         
@@ -36,7 +36,7 @@
            
         <div class="modalnuevo" id="usuarios" >
             <div class="usuario " (click)="ver(usuario, usuarioModal)">
-                <p class="p-2">VER DATOS</p>
+                <p class="p-2"><i class="fa fa-eye"></i> Stock</p>
             </div>
         </div>   
         
@@ -66,8 +66,10 @@
     </div>
 
     <a class="btn btn-secondary text-white mr-1 atendedor" (click)="onEdit(product)">
-      <i class="fas fa-sync"></i>
+      <i class="fas fa-sign-in-alt"></i>
     </a>
+
+    
   </ng-template>  
 </div>
 </div>

@@ -34,8 +34,8 @@
 .active2{background-color: black;color: white;padding-top: 10px;
    }
 /*-------------*/  
-.usuario p{background-color:black; color: WHITE;
-  width: 110px;cursor: pointer; 
+.usuario p{background-color:chartreuse; color: black;
+  width: 90px;cursor: pointer; 
  transform: translateY(2px)scale(0.9);
 }
 /*-------------*/
