@@ -27,7 +27,7 @@
  .conruteo{color:grey;font-style: italic;}
 .telefono{ padding-right: 5px;}
 /*------*/
-.opciones{margin: auto;padding: 10px; }
+.opciones{margin: auto;padding: 10px;}
 .opciones a{color: rgb(238, 233, 227);margin-left: 10px;}
 .active a {color: red;}
 .active {background-color: black;  padding: 5px; } 

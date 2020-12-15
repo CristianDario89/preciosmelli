@@ -38,6 +38,7 @@ import { MensajeComponent } from './components/mensaje/mensaje.component';
 import { SidebarModule } from 'ng-sidebar';
 import { AlertasComponent } from './components/sidebar/alertas/alertas.component';
 import { PrestamosComponent } from './components/sidebar/prestamos/prestamos.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { PrestamosComponent } from './components/sidebar/prestamos/prestamos.com
     ViernesComponent,
     MensajeComponent,
     AlertasComponent,
-    PrestamosComponent 
+    PrestamosComponent,
+    SidebarComponent 
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 .opciones{
   margin: auto;
+  position: relative;z-index: 1111;
 }
 .opciones a{
 color: rgb(238, 233, 227);
