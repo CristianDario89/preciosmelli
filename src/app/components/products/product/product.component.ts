@@ -41,8 +41,10 @@ export class ProductComponent implements OnInit {
   this.productService.updateProduct(productForm.value);
   this.resetForm(productForm);
   this.toastr.success('Operación exitosa', 'Cliente editado');
-  }
 
+  
+  document.getElementById("arriba").scrollIntoView();
+  } 
   
   resetForm(productForm?: NgForm)
   {

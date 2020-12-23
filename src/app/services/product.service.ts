@@ -5,7 +5,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 // Model
 import { Product } from '../models/product';
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +20,6 @@ export class ProductService {
   {
     return this.productList = this.firebase.list('monodatos');
   }
-
   insertProduct(product: Product)
   {
     this.productList.push({
@@ -57,4 +56,5 @@ export class ProductService {
   {
     this.productList.remove($key);
   }
+
 }

@@ -12,7 +12,8 @@ export class MensajeComponent implements OnInit {
 
   public fecha: any;
   ngOnInit() {
-    this.fecha = new Date(); 
+    this.fecha = new Date();
+     
     $(".mifecha").css('color', 'gray'); 
   }
 

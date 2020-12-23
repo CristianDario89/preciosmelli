@@ -21,6 +21,7 @@ import { ProductService } from './services/product.service';
 // Toastr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { RutasComponent } from './components/rutas/rutas.component';
 import { ReciboComponent } from './components/recibo/recibo.component';
@@ -39,6 +40,13 @@ import { SidebarModule } from 'ng-sidebar';
 import { AlertasComponent } from './components/sidebar/alertas/alertas.component';
 import { PrestamosComponent } from './components/sidebar/prestamos/prestamos.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+ 
+import { HttpClientModule } from '@angular/common/http'; 
+
+import { AlertandoService } from './components/sidebar/alertas/service/alertando.service';
+import { AlertaJuevesComponent } from './components/sidebar/alertas/jueves/jueves.component';
+import { ClienteComponent } from './components/rutas/jueves/cliente/cliente.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,23 +62,28 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ViernesComponent,
     MensajeComponent,
     AlertasComponent,
+    AlertaJuevesComponent,
     PrestamosComponent,
-    SidebarComponent 
+    SidebarComponent,
+    ClienteComponent 
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    routing,
     FormsModule,
     GoogleMapsModule,
     NgbModule,
+    NgxSpinnerModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
+    HttpClientModule, 
     SidebarModule.forRoot(),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(), 
+    routing
   ],
   providers: [
     ProductService,
+    AlertandoService,
     appRoutingProvider
   ],
   bootstrap: [AppComponent]

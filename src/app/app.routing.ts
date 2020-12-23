@@ -16,6 +16,10 @@ import { SidebarModule } from 'ng-sidebar';
 import { AlertasComponent } from './components/sidebar/alertas/alertas.component';
 import { PrestamosComponent } from './components/sidebar/prestamos/prestamos.component';
 
+import { AlertaJuevesComponent } from './components/sidebar/alertas/jueves/jueves.component';
+
+import { ClienteComponent } from './components/rutas/jueves/cliente/cliente.component';
+
 //array de rutas
 const appRoutes: Routes = [ //pa q se cumplan los formato de angular
    /* {path: '', component: HomeComponent},
@@ -32,7 +36,11 @@ const appRoutes: Routes = [ //pa q se cumplan los formato de angular
 
     {path: 'sidebar/prestamos', component: PrestamosComponent},
     {path: 'sidebar/alerta', component: AlertasComponent},
-    {path: 'sidebar', component: SidebarModule}
+    {path: 'sidebar', component: SidebarModule},
+
+    {path: 'sidebar/alerta/jueves', component: AlertaJuevesComponent},
+
+    {path: 'cliente/:id', component: ClienteComponent}
 ];
 //Exportacion
 export const appRoutingProvider: any[] = [];

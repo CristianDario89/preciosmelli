@@ -85,13 +85,14 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets" 
             ],
             "styles": [
               "src/styles.css",
               "src/modal.min.css",
               "src/assets/styles.css",
-             " ../node_modules/ngx-toastr/toastr.css"
+             " ../node_modules/ngx-toastr/toastr.css",
+             " ../node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js"
