@@ -62,4 +62,5 @@ export class JuevesComponent implements OnInit {
   goToEdit(){
     document.getElementById("bajando").scrollIntoView();
   }
+ 
 }

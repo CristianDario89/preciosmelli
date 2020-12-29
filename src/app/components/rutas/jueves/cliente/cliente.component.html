@@ -6,7 +6,16 @@
     </tr>
     <tr>
         <th>Historial de saldo</th>
-        <td ></td>
+        <td>
+           
+            <button (click)="onclick()" type="button" class="btn btn-dark">
+                {{ReadMore?"Ver historial":"No ver"}}
+            </button>
+            <ng-container *ngIf="visible" style="background-color:antiquewhite;width: 200px;height: 100px;">
+                <div class="bg-white shadow-sm p-3">Este ejemplar debe $ {{cliente?.price}}    </div>
+            </ng-container>
+
+        </td>
     </tr>
     <tr>
         <th>Alertas</th>

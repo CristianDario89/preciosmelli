@@ -8,16 +8,25 @@ import { AlertandoService } from '../../../sidebar/alertas/service/alertando.ser
 })
 export class ClienteComponent implements OnInit {
 cliente:any;
-
+ReadMore:boolean=true;
+visible:boolean=false;
+ 
   constructor(private route:ActivatedRoute, private clienteSvc:AlertandoService) { }
 
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
-    
     this.clienteSvc.getUser(id).subscribe(u =>{
       console.log(u);
       this.cliente = u;
     });
+
+   
+ 
+  }
+  onclick(){
+    this.ReadMore = !this.ReadMore;
+    this.visible = !this.visible;
   }
 
+  
 }

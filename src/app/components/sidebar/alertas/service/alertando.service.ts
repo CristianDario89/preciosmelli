@@ -20,7 +20,6 @@ export class AlertandoService {
   getAllUser(){
     return this._http.get("http://localhost:3000/Employee")
   }
-  
   getUser(id:number)
   {
     return this._http.get("http://localhost:3000/Employee/"+id)
