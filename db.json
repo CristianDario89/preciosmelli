@@ -5,30 +5,30 @@
       "name": "Gastón",
       "cantidad": "1",
       "prestado": "Mes",
-      "price" : 280,
+      "price" : [280,1110],
       "bidon": "1",
       "dia": "jueves",
-      "fecha": "21/12/2020"
+      "fecha": ["21/12/2020","28/12/2020"]
      },
     {
       "id" : 30,
        "name" : "Ana",
       "cantidad" : "1",
       "prestado" : "Mes",
-      "price" : 320,
+      "price" : [320,0] ,
       "bidon": "1",
       "dia": "jueves",
-      "fecha": "21/12/2020"
+      "fecha": ["21/12/2020","28/12/2020"]
     },
    {
     "id": 26,
     "name": "Estefania ",
       "cantidad": "1",
       "prestado": "Mes",
-      "price": 190,
+      "price":  [190,0],
       "bidon": "2",
       "dia": "jueves",
-      "fecha": "21/12/2020"
+      "fecha": ["21/12/2020","28/12/2020"]
      
     },
     {
@@ -36,285 +36,184 @@
       "name": "Mercedes",
       "cantidad" : "2",
       "prestado" : "1",
-      "price" : 240,
+      "price" : [240,0],
       "bidon" : "Bs 12Lts",
       "dia": "jueves",
-      "fecha": "21/12/2020"
+      "fecha": ["21/12/2020","28/12/2020"]
     },
     {
       "id" : 34,
      "name" : "Liliana ",
       "cantidad" : "1",
       "prestado" : "Mes",
-      "price": 250,
+      "price": [250,220],
       "bidon": "2",
       "dia": "jueves",
-      "fecha": "21/12/2020"
+      "fecha": ["21/12/2020","28/12/2020"]
     },
     {
        "id" : 36,
       "name": "Cristina ",
       "cantidad" : "3",
       "prestado" : "1",
-      "price": 280,
+      "price": [280,0],
       "bidon": "B 12Lts",
       "dia": "jueves",
-      "fecha": "21/12/2020"
+      "fecha": ["21/12/2020","28/12/2020"]
     },
     {
       "id": 43,
       "name": "Andrea",
       "cantidad" : "2",
       "prestado" : "1",
-      "price": 280,
+      "price": [280,120],
       "bidon": "B 12Lts",
       "dia": "jueves",
-      "fecha": "21/12/2020"
-    },
-     
-    
-    {
-      "id": 25,
-       "name": "Gastón",
-       "cantidad": "1",
-       "prestado": "Mes",
-       "price" : 180,
-       "bidon": "1",
-       "dia": "jueves",
-       "fecha": "28/12/2020"
-      },
-     {
-       "id" : 30,
-        "name" : "Ana",
-       "cantidad" : "1",
-       "prestado" : "Mes",
-       "price" : 320,
-       "bidon": "1",
-       "dia": "jueves",
-       "fecha": "28/12/2020"
-     },
-    {
-     "id": 26,
-     "name": "Estefania ",
-       "cantidad": "1",
-       "prestado": "Mes",
-       "price": 190,
-       "bidon": "2",
-       "dia": "jueves",
-       "fecha": "28/12/2020"
-      
-     },
-     {
-       "id" : 32,
-       "name": "Mercedes",
-       "cantidad" : "2",
-       "prestado" : "1",
-       "price" : 240,
-       "bidon" : "Bs 12Lts",
-       "dia": "jueves",
-       "fecha": "28/12/2020"
-     },
-     {
-       "id" : 34,
-      "name" : "Liliana ",
-       "cantidad" : "1",
-       "prestado" : "Mes",
-       "price": 250,
-       "bidon": "2",
-       "dia": "jueves",
-       "fecha": "28/12/2020"
-     },
-     {
-        "id" : 36,
-       "name": "Cristina ",
-       "cantidad" : "3",
-       "prestado" : "1",
-       "price": 280,
-       "bidon": "B 12Lts",
-       "dia": "jueves",
-       "fecha": "28/12/2020"
-     },
-     {
-       "id": 43,
-       "name": "Andrea",
-       "cantidad" : "2",
-       "prestado" : "1",
-       "price": 280,
-       "bidon": "B 12Lts",
-       "dia": "jueves",
-       "fecha": "28/12/2020"
-     },
+      "fecha": ["21/12/2020","28/12/2020"]
+    } ,
 
 
-     {
-      "direccion": "Vuelta de obligado 4885",
-      "id": 21,
-      "localidad" : "VillaBosch",
+    { 
+      "id": 21, 
       "name" : "Ricardo",
-      "observacion": "1",
-      "pago": "Mes",
-      "price": 250,
-      "ruta": "1",
-      "telefono": 5493751613309,
-      "tipo": "Viernes"
+      "cantidad": "1",
+     "prestado": "Mes",
+      "price": [250,0],
+      "ruta": "1", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Rivadavia 3745 6to \"D\"",
-      "id": 29,
-      "localidad": "SanMartin",
+    { 
+      "id": 29, 
       "name": "Eduardo",
-      "observacion": "1",
-      "pago": "Mes",
-      "price": 240,
-      "ruta": "2",
-      "telefono": 1164545723,
-      "tipo": "Viernes"
+      "cantidad": "1",
+     "prestado": "Mes",
+      "price": [240,0],
+      "ruta": "2", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Av. De los Constituyentes",
-      "id": 38,
-      "localidad": "SanMartin",
+    { 
+      "id": 38, 
       "name": "Alejandra",
-      "observacion": "1",
-      "pago": "Mes",
-      "price": 220,
-      "ruta": "1",
-      "telefono": 1138225293,
-      "tipo": "Viernes"
+      "cantidad": "1",
+     "prestado": "Mes",
+      "price": [220,0],
+      "ruta": "1", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Pueyrredón 2800",
-      "id": 45,
-      "localidad": "SanMartin",
+    { 
+      "id": 45, 
       "name": "Yanina",
-      "observacion": "1",
-      "pago": "Mes",
-      "price": 190,
-      "ruta": "1",
-      "telefono": 1123890229,
-      "tipo": "Viernes"
+      "cantidad": "1",
+     "prestado": "Mes",
+      "price": [190,0],
+      "ruta": "1", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Canesse 3567",
-      "id": 46,
-      "localidad": "San martin",
+    { 
+      "id": 46, 
       "name": "Martin alfeo",
-      "observacion": "2",
-      "pago": "1",
-      "price": 275,
-      "ruta": "B 12Lts",
-      "telefono": 1158340588,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price": [275,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Alvear 3953",
-      "id": 50,
-      "localidad": "Billinghurst",
+    { 
+      "id": 50, 
       "name": "Juan",
-      "observacion": "2",
-      "pago": "1",
-      "price": 280,
-      "ruta": "B 12Lts",
-      "telefono": 1167995252,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price":[280,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-   {
-      "direccion": "Rivadavia 3745 6to \"C\"",
-      "id": 51,
-      "localidad": "San martin",
+   { 
+      "id": 51, 
       "name": "Dalia",
-      "observacion": "2",
-      "pago": "1",
-      "price": 240,
-      "ruta": "B 12Lts",
-      "telefono": 1121806560,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price": [240,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-   {
-      "direccion": "Pellegrini 1792 \"Pb\"",
-      "id": 52,
-      "localidad": "San martin",
+   { 
+      "id": 52, 
       "name": "Carlos",
-      "observacion": "2",
-      "pago": "1",
-      "price": 250,
-      "ruta": "B 12Lts",
-      "telefono": 1133012860,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price": [250,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "San Lorenzo 2272 3ro \"B\"",
-      "id": 54,
-      "localidad": "San martin",
+    { 
+      "id": 54, 
       "name": "Cristian",
-      "observacion": "3",
-      "pago": "1",
-      "price": 210,
-      "ruta": "B 12Lts",
-      "telefono": 1161823876,
-      "tipo": "Viernes"
+      "cantidad": "3",
+     "prestado": "1",
+      "price": [210,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Juárez 3758 t B",
-      "id": 57,
-      "localidad": "San martin",
+    { 
+      "id": 57, 
       "name": "Nancy",
-      "observacion": "3",
-      "pago": "1",
-      "price": 290,
-      "ruta": "B 12Lts",
-      "telefono": 5493437449915,
-      "tipo": "Viernes"
+      "cantidad": "3",
+     "prestado": "1",
+      "price": [290,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-     {
-      "direccion": "San Luis 3564",
-      "id": 58,
-      "localidad": "San Andrès",
+     { 
+      "id": 58, 
       "name": "Liliana",
-      "observacion": "2",
-      "pago": "1",
-      "price": 250,
-      "ruta": "B 12Lts",
-      "telefono": 1138488758,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price": [250,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Gral. Güemes 3820 ",
-      "id": 59,
-      "localidad": "San martin",
+    { 
+      "id": 59, 
       "name": "Lorena",
-      "observacion": "2",
-      "pago": "1",
-      "price": 1120,
-      "ruta": "B 12Lts",
-      "telefono": 1139188192,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price": [1120,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "Pueyrredón 2610 t izq",
-      "id": 60,
-      "localidad": "San martin",
+    { 
+      "id": 60, 
       "name": "Monica",
-      "observacion": "2",
-      "pago": "1",
-      "price": 250,
-      "ruta": "B 12Lts",
-      "telefono": 1133591935,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price": [250,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     },
-    {
-      "direccion": "José María Campos 1664",
-      "id": 62,
-      "localidad": "San martin",
+    { 
+      "id": 62, 
       "name": "Marcelo",
-      "observacion": "2",
-      "pago": "1",
-      "price" : 250,
-      "ruta": "B 12Lts",
-      "telefono": 1164779576,
-      "tipo": "Viernes"
+      "cantidad": "2",
+     "prestado": "1",
+      "price" : [250,0],
+      "ruta": "B 12Lts", 
+      "dia": "Viernes",
+      "fecha": ["21/12/2020","28/12/2020"]
     }
-
+     
 
   ] 
  

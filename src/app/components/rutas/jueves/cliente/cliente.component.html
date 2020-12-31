@@ -12,7 +12,35 @@
                 {{ReadMore?"Ver historial":"No ver"}}
             </button>
             <ng-container *ngIf="visible" style="background-color:antiquewhite;width: 200px;height: 100px;">
-                <div class="bg-white shadow-sm p-3">Este ejemplar debe $ {{cliente?.price}}    </div>
+                <div class="bg-white shadow-sm p-3">
+                     <table class="table table-sm table-hover ml-2">
+
+                        <thead>
+                          <tr>
+                            <td>fecha</td>
+                            <td>Precio</td>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr >
+                            <td> 
+                                <ul>
+                                <li> {{cliente.fecha[0]}} </li>
+                                <li> {{cliente.fecha[1]}} </li>
+                                </ul>
+                            </td>
+                            <td >
+                                <ul>
+                                    <li> {{cliente.price[0]}} </li>
+                                    <li> {{cliente.price[1]}} </li>
+                                </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+
+                      </table>
+                </div>
             </ng-container>
 
         </td>

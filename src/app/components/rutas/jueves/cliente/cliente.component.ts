@@ -16,7 +16,7 @@ visible:boolean=false;
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
     this.clienteSvc.getUser(id).subscribe(u =>{
-      console.log(u);
+     
       this.cliente = u;
     });
 

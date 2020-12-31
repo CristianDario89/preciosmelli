@@ -3,7 +3,7 @@ html{
  }
 
 .opciones{
-     margin: auto;
+   margin-right: 10px;
 }
 .opciones a{
    color: rgb(238, 233, 227);
@@ -16,13 +16,13 @@ html{
    background: #27ae60;
    bottom: 40px;
    right: 50px;
- opacity: 0.7;
+ opacity: 0.6;
    text-decoration: none;
    text-align: center;
    line-height: 50px;
    color: white;
    font-size: 22px;
-   
+   border-radius: 50%;
  }
  
 .gotopbtn:hover{

@@ -12,7 +12,7 @@
   </nav>
    
   <div class="wrapgral">
-  <div *ngFor="let cliente of productList; let i = index"  id="usu" >
+  <div *ngFor="let cliente of productList; index as i"  id="usu" >
   
     <ng-template [ngIf] = "cliente.tipo == 'Jueves'" > 
  
