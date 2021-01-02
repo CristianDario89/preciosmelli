@@ -21,11 +21,7 @@ export class ProductService {
     return this.productList = this.firebase.list('monodatos');
   }
 
-  getItem(id: string) {
-    return this.productList = this.firebase.list('monodatos/'+id);
-      }
-
-      
+ 
   insertProduct(product: Product)
   {
     this.productList.push({

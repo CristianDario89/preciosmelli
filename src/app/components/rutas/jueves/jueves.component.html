@@ -1,46 +1,21 @@
 <nav class="navbar navbar-dark bg-success">
-
-  <div class="opciones">
+<div class="opciones">
     <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
     <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
     <a [routerLink]="['/rutas/jueves']" [routerLinkActive]="['active']">Jueves</a>
     <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
     <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
-  
-  </div>
-  
-  </nav>
+</div>
+</nav>
    
-  <div class="wrapgral">
-  <div *ngFor="let cliente of productList; index as i"  id="usu" >
+<div class="wrapgral">
+  <div *ngFor="let cliente of productList; let i = index"  id="usu" >
   
     <ng-template [ngIf] = "cliente.tipo == 'Jueves'" > 
  
-      <div class="wrapdatos" 
-        [class.altoPrecio]="cliente.prestado >= '0'"
-        [ngClass]="{
-            'fondoRojo': cliente.semaforo == 'rojo',
-            'fondoAmarillo': cliente.semaforo == 'amarillo',
-            'active2': selectedIdx == i 
-        }">
+      <div class="wrapdatos">
         
-          <div class="nombre">
-          
-            <p (click)="selectItem(i)"><i class="fas fa-dot-circle punto"></i>
-              <a  [routerLink]="['/cliente',cliente.id]" > 
-                {{cliente.id}}
-              </a>
-{{cliente.name}}
-              </p>
-
-            <span *ngIf="cliente.prestado > 1"
-              [style.color]="cliente.prestado > 1 ? 'red' : 'black'"
-              [style.fontSize]="cliente.prestado > 1 ? '16px' : '7px'"
-              > Te debe
-            </span>
-
-          </div>  
-          
+          <div class="nombre"><p (click)="selectItem(i)"><a  [routerLink]="['/cliente',cliente.id]" >{{cliente.id}}</a> {{cliente.name}}</p></div>  
           <div class="mt-1"><strong>{{cliente.direccion}}</strong> - <span class="locali">{{cliente.localidad}}</span>  </div>
            
           <div class="modalnuevo" id="usuarios" >
@@ -68,16 +43,14 @@
               <div class="modal-footer"></div>
           </ng-template> 
         
-            <pre>{{ closeResult }}</pre>
+          <pre>{{ closeResult }}</pre>
 
       </div>
        
-      
-      <a class="btn btn-secondary text-white mr-1 atendedor" (click)="onEdit(cliente)">
-      <!--<i class="fas fa-sync"></i>--> <i class="fas fa-sign-in-alt"></i>
-      </a>
-    
+    <a class="btn btn-secondary text-white mr-1 atendedor" (click)="onEdit(cliente)">
+     <!--<i class="fas fa-sync"></i>--> <i class="fas fa-sign-in-alt"></i>
+    </a>
     </ng-template>  
   </div>
-  </div>
+</div>
   

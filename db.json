@@ -78,7 +78,7 @@
       "name" : "Ricardo",
       "cantidad": "1",
      "prestado": "Mes",
-      "price": [250,0],
+      "price": [250,220],
       "ruta": "1", 
       "dia": "Viernes",
       "fecha": ["21/12/2020","28/12/2020"]

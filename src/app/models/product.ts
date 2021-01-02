@@ -12,3 +12,11 @@ export class Product {
     semaforo: string;
     price: number;
 }
+export interface Cliente {
+    id: number;
+    name: string;
+    producto: string;
+    cantidad: string;
+    prestado: string; 
+    precio: any;
+}

@@ -1,75 +1,56 @@
 <nav class="navbar navbar-dark bg-success">
-
   <div class="opciones">
-    <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
-    <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
-    <a [routerLink]="['/rutas/jueves']" [routerLinkActive]="['active']">Jueves</a>
-    <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
-    <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
-  
+      <a [routerLink]="['/rutas/lunes']" [routerLinkActive]="['active']">Martes</a>
+      <a [routerLink]="['/rutas/miercoles']" [routerLinkActive]="['active']">Miercoles</a>
+      <a [routerLink]="['/rutas/jueves']" [routerLinkActive]="['active']">Jueves</a>
+      <a [routerLink]="['/rutas/viernes']" [routerLinkActive]="['active']">Viernes</a>
+      <a [routerLink]="['/rutas/martes']" [routerLinkActive]="['active']">Sabado</a>
   </div>
-  
   </nav>
-   
+     
   <div class="wrapgral">
+    <div *ngFor="let cliente of productList; let i = index"  id="usu" >
     
-  <div *ngFor="let product of productList; let i = index"  id="usu" >
-  
-    <ng-template [ngIf] = "product.tipo == 'Miércoles'"> 
-      <div class="usuario2" [class.altoPrecio]="product.prestado >= '0'"
-        [ngClass]="{
-            'fondoRojo': product.semaforo == 'rojo',
-            'fondoAmarillo': product.semaforo == 'amarillo'
-        }">
-        
-        <div class="wrapdatos" [ngClass]="{'active2': selectedIdx == i}">
-          <div class="nombre"> 
-            <p (click)="selectItem(i)"><i class="fas fa-dot-circle punto"></i>{{product.name}}</p>
-            <span *ngIf="product.prestado > 1"
-              [style.color]="product.prestado > 1 ? 'red' : 'black'"
-              [style.fontSize]="product.prestado > 1 ? '16px' : '7px'"
-              > Te debe Amigo
-            </span>
-          </div>  
+      <ng-template [ngIf] = "cliente.tipo == 'Miércoles'" > 
+   
+        <div class="wrapdatos">
           
-          <div class="mt-1"><strong>{{product.direccion}}</strong> - <span class="locali">{{product.localidad}}</span>  </div>
-          <div class="telefono"> {{product.telefono}} </div>
+            <div class="nombre"><p (click)="selectItem(i)"><a  [routerLink]="['/cliente',cliente.id]" >{{cliente.id}}</a> {{cliente.name}}</p></div>  
+            <div class="mt-1"><strong>{{cliente.direccion}}</strong> - <span class="locali">{{cliente.localidad}}</span>  </div>
              
-          <div class="modalnuevo" id="usuarios" >
-              <div class="usuario " (click)="ver(usuario, usuarioModal)">
-                  <p class="p-2"><i class="fa fa-eye"></i> Stock</p>
-              </div>
-          </div>   
+            <div class="modalnuevo" id="usuarios" >
+                <div class="usuario " (click)="ver(usuario, usuarioModal)">
+                    <p class="p-2"><i class="fa fa-eye"></i> Stock</p>
+                </div>
+            </div>   
+            
+            <ng-template #usuarioModal let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title pl-3"> #{{cliente.id}} {{cliente.name}} -  {{cliente.telefono}}</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body p-3">
+                      
+                  <div><strong>Producto:</strong> {{cliente.ruta}}</div>
+                  <div><strong>Cantidad:</strong>  {{cliente.cantidad}}</div>
+                  <div><strong>Prestado:</strong> {{cliente.prestado}}</div>
+                 <!-- <img src={{product.img}} alt="">-->
+                      
+                </div>
+                
+                <div class="modal-footer"></div>
+            </ng-template> 
           
-          <ng-template #usuarioModal let-modal>
-              <div class="modal-header">
-                <h4 class="modal-title pl-3"> #{{product.id}} {{product.name}}</h4>
-                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body p-3">
-                    
-                <div><strong>Bidon:</strong> {{product.ruta}}</div>
-                <div><strong>Cantidad:</strong>  {{product.cantidad}}</div>
-                <div><strong>Prestado:</strong> {{product.prestado}}</div>
-                <img src={{product.img}} alt="">
-                    
-              </div>
-              
-              <div class="modal-footer"></div>
-          </ng-template> 
-        
             <pre>{{ closeResult }}</pre>
+  
         </div>
-           
-       
-      </div>
-  
-      <a class="btn btn-secondary text-white mr-1 atendedor" (click)="onEdit(product)">
-        <i class="fas fa-sign-in-alt"></i>
+         
+      <a class="btn btn-secondary text-white mr-1 atendedor" (click)="onEdit(cliente)">
+       <!--<i class="fas fa-sync"></i>--> <i class="fas fa-sign-in-alt"></i>
       </a>
-    </ng-template>  
+      </ng-template>  
+    </div>
   </div>
-  </div>
-  
+    

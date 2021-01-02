@@ -43,8 +43,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
  
 import { HttpClientModule } from '@angular/common/http'; 
 
-import { AlertandoService } from './components/sidebar/alertas/service/alertando.service';
-import { AlertaJuevesComponent } from './components/sidebar/alertas/jueves/jueves.component';
 import { ClienteComponent } from './components/rutas/jueves/cliente/cliente.component';
 
 @NgModule({
@@ -62,7 +60,6 @@ import { ClienteComponent } from './components/rutas/jueves/cliente/cliente.comp
     ViernesComponent,
     MensajeComponent,
     AlertasComponent,
-    AlertaJuevesComponent,
     PrestamosComponent,
     SidebarComponent,
     ClienteComponent 
@@ -83,7 +80,6 @@ import { ClienteComponent } from './components/rutas/jueves/cliente/cliente.comp
   ],
   providers: [
     ProductService,
-    AlertandoService,
     appRoutingProvider
   ],
   bootstrap: [AppComponent]
