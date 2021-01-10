@@ -1,12 +1,14 @@
 
 
 <div>
-  <nav class="navbar navbar-dark bg-dark" id="arriba">
+  <nav class="navbar navbar-dark bg-dark" id="arriba" >
     <a class="navbar-brand pl-4" [routerLink]="['/']">Reparto de agua </a>
     
     <div class="opciones">
       <a [routerLink]="['/rutas']"  >RUTAS</a>&nbsp;
       <a [routerLink]="['/recibo']" >RECIBO</a>
+      
+      <a class="nav-link" (click)="logout()" *ngIf="authenticationService.isAuthenticated">Logout</a>
     </div>
   </nav>
    
@@ -15,9 +17,9 @@
 </div>
 <app-sidebar></app-sidebar>
 
-<app-products></app-products>
-
-
+<div class="col-md-4 col-sm-12 products"  *ngIf="authenticationService.isAuthenticated">
+  <app-product></app-product>
+</div>
 <a class="gotopbtn" href=""> <i class="fas fa-arrow-up"></i> </a>
 
 

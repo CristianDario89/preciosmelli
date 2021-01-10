@@ -44,6 +44,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { ClienteComponent } from './components/rutas/jueves/cliente/cliente.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ClienteComponent } from './components/rutas/jueves/cliente/cliente.comp
     AlertasComponent,
     PrestamosComponent,
     SidebarComponent,
-    ClienteComponent 
+    ClienteComponent,
+    LoginComponent 
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                <h1 class="h3 mb-3 font-weight-normal">Por favor ingrese</h1>
+
+                <label for="inputlogin" class="sr-only">Usuario </label>
+                <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Usuario" ngModel
+                    required autofocus>
+
+                <label for="inputPassword" class="sr-only">Contraseña</label>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Contraseña"
+                    autocomplete="on" ngModel required>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+
+                <div class="alert alert-danger" role="alert" *ngIf="isFormValid">
+                   Por favor llene todos los campos.
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                    Usuario o Contraeña invalida.
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
