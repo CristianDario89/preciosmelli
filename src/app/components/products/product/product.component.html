@@ -75,7 +75,7 @@
               <div class="col-lg-6 col-sm-12"><div class="form-group">
                 <label for="tipo">Dia</label>
                 <select name="tipo" id="tipo" [(ngModel)]="productService.selectedProduct.tipo" class="form-control">
-                    <option value="Lunes" selected>Lunes</option>
+                    <option value="Lunes" selected>Sabado</option>
                     <option value="Martes">Martes</option>
                     <option value="Miércoles">Miércoles</option>
                     <option value="Jueves">Jueves</option>
@@ -145,10 +145,10 @@
               <label >Dispenser</label>
               <div class="form-control">
                 <label class="radio-inline" >
-                  <input type="radio" value="Agua" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo" checked> Agua
+                  <input type="radio" value="Natural" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo" checked>Natural
                 </label>
                 <label class="radio-inline" class="ml-3">
-                  <input type="radio" value="Jugo" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo"> Jugo
+                  <input type="radio" value="Frío/Calor" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo">Frío/Calor
                 </label>
               </div>
             </div> </div>
