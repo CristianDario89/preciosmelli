@@ -8,8 +8,7 @@ import { ProductService } from '../../../services/product.service';
 
 // toastr
 import { ToastrService } from 'ngx-toastr';
-
-import * as $ from "jquery";
+ 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',

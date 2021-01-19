@@ -10,6 +10,7 @@ export class Product {
     ruta: string;
     cantidad: string;
     semaforo: string;
+    observacion: string;
     price: number;
 }
 export interface Cliente {

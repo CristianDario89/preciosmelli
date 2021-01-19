@@ -25,9 +25,10 @@ import { ProductListComponent } from './components/products/product-list/product
 //array de rutas
 const appRoutes: Routes = [ //pa q se cumplan los formato de angular
    /* {path: '', component: HomeComponent},
-    {path: 'home', component: HomeComponent},*/
+    {path: 'home', component: HomeComponent},
+    {path: 'editado', component: ProductComponent, canActivate: [AuthGuard]},*/
     {path: '', component: ProductsComponent},
-    {path: 'editado', component: ProductComponent, canActivate: [AuthGuard]},
+    {path: 'editado', component: ProductComponent},
     {path: 'rutas', component: RutasComponent},
     {path: 'recibo', component: ReciboComponent},
     {path: 'rutas/lunes', component: LunesComponent},

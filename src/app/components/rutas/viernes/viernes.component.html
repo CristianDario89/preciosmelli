@@ -9,9 +9,9 @@
   
   </div>
   
-  </nav>
+</nav>
    
-  <div class="wrapgral">
+<div class="wrapgral">
   <div *ngFor="let cliente of productList; let i = index"  id="usu" >
   
     <ng-template [ngIf] = "cliente.tipo == 'Viernes'" > 
@@ -58,8 +58,7 @@
               </div>
               <div class="modal-body p-3">
                     
-                <div><strong>Producto:</strong> {{cliente.ruta}}</div>
-                <div><strong>Cantidad:</strong>  {{cliente.cantidad}}</div>
+                <div><strong>Tiene:</strong> {{cliente.cantidad}} Bidon {{cliente.ruta}}</div> 
                 <div><strong>Prestado:</strong> {{cliente.prestado}}</div>
                <!-- <img src={{product.img}} alt="">-->
                     
@@ -77,5 +76,13 @@
     </a>
     </ng-template>  
   </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <app-product></app-product>
   </div>
+  <div class="col-lg-6"></div>
+</div>
   

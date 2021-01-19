@@ -6,9 +6,9 @@
     
     <div class="opciones">
       <a [routerLink]="['/rutas']"  >RUTAS</a>&nbsp;
-      <a [routerLink]="['/recibo']" >RECIBO</a>
-      
-      <a class="nav-link" (click)="logout()" *ngIf="authenticationService.isAuthenticated">Salir</a>
+      <!--<a [routerLink]="['/recibo']" >RECIBO</a>
+       <a class="nav-link" (click)="logout()" *ngIf="authenticationService.isAuthenticated">Salir</a>
+      -->
     </div>
   </nav>
    
@@ -17,7 +17,10 @@
 </div>
 <app-sidebar></app-sidebar>
 
-<div class="col-md-4 col-sm-12 products"  *ngIf="authenticationService.isAuthenticated">
+<!--<div class="col-md-4 col-sm-12 products"  *ngIf="authenticationService.isAuthenticated">
+  <app-product></app-product>
+</div>-->
+<div class="col-md-4 col-sm-12 products">
   <app-product></app-product>
 </div>
 <a class="gotopbtn" href=""> <i class="fas fa-arrow-up"></i> </a>

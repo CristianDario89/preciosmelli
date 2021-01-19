@@ -18,6 +18,7 @@
             <td>Pres</td>
             <td>Disp</td>
             <td>Precio</td>
+            <td>Obs</td>
           </tr>
         </thead>
         <tbody>
@@ -25,10 +26,8 @@
             <td class="id" *ngIf='product.id >= 1' 
               [style.background]="product.id >= 46 ? 'black' : 'grey'"
               [style.color]="product.id >= 46 ? 'white' : 'white'"> 
-              
               0{{product.id}}
-           
-          </td>
+            </td>
          <!--<td class="nombre">{{product.name}}</td>
              <td class="direccion">{{product.direccion}}</td>
             <td class="localidad">{{product.localidad}}</td>
@@ -40,7 +39,7 @@
             <td class="prestado">{{product.prestado}}</td>
             <td >{{product.semaforo}}</td>
             <td >$ <span id="precioo"> {{product.price}}</span>   </td>
-
+            <td class="observacion">{{product.observacion}}</td>
             <td>
               <a class="btn btn-secondary text-white mr-1" (click)="onEdit(product)">
                   <i class="far fa-edit"></i>

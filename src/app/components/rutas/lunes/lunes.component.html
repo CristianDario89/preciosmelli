@@ -8,7 +8,7 @@
   </div>
   </nav>
      
-  <div class="wrapgral">
+<div class="wrapgral">
     <div *ngFor="let cliente of productList; let i = index"  id="usu" >
     
       <ng-template [ngIf] = "cliente.tipo == 'Martes'" > 
@@ -52,5 +52,13 @@
       </a>
       </ng-template>  
     </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <app-product></app-product>
+  </div>
+  <div class="col-lg-6"></div>
 </div>
     

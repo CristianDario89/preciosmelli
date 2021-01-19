@@ -1,190 +1,211 @@
-
+ 
+    
 <div class="card mt-5 bg-dark text-white">
   <div class="card-body"> <h2>Nuevo cliente</h2>
-     <form  #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
-           
-            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
-            
-            <div class="row">
-              <div class="col-3 "><div class="form-group">
-                <input 
-                  type="number"
-                  class="form-control"
-                  name="id"
-                  #name="ngModel"
-                  [(ngModel)]="productService.selectedProduct.id"
-                  placeholder="ID"
-                  >
-                    </div></div>
-              <div class="col-9"> <div class="form-group">
-                <input 
-                  type="text"
-                  class="form-control"
-                  name="name"
-                  #name="ngModel"
-                  [(ngModel)]="productService.selectedProduct.name"
-                  placeholder="Cliente"
-                  >
-              </div></div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-6 col-sm-12"><div class="form-group">
-                <input 
-                  type="text"
-                  class="form-control"
-                  name="direccion"
-                  #name="ngModel"
-                  [(ngModel)]="productService.selectedProduct.direccion"
-                  placeholder="Dirección"
-                  >
-              </div> </div>
-              <div class="col-lg-6 col-sm-12"> <div class="form-group">
-                <input 
-                  type="number"
-                  class="form-control"
-                  name="telefono"
-                  #name="ngModel"
-                  [(ngModel)]="productService.selectedProduct.telefono"
-                  placeholder="Telefono"
-                  >
-              </div></div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-6 col-sm-12"><div class="form-group">
-                <label for="localidad">Localidad</label>
-                  <select name="localidad" id="localidad"  [(ngModel)]="productService.selectedProduct.localidad" class="form-control">
-                    <option value="Billinghurst">Billinghurst</option>
-                    <option value="Caseros">Caseros</option>
-                    <option value="Ciudad Jardin">Ciudad Jardin</option>
-                    <option value="Ciudadela">Ciudadela</option>
-                    <option value="Florida">Florida</option>
-                    <option value="Haedo">Haedo</option>
-                    <option value="Martin Coronado">Martin Coronado</option>
-                    <option value="Munro" selected>Munro</option>
-                    <option value="Caseros">Olivos</option>
-                    <option value="Palomar" selected>Palomar</option>
-                    <option value="Saenz Peña" selected>Saenz Peña</option>
-                    <option value="San martin" selected>San martin</option>
-                    <option value="Villa Adelina">Villa Adelina</option>
-                    <option value="Villa bosch">Villa bosch</option>
-                    <option value="San Andrès">San Andrès</option>
-                  </select>
-              </div> </div>
-              <div class="col-lg-6 col-sm-12"><div class="form-group">
-                <label for="tipo">Dia</label>
-                <select name="tipo" id="tipo" [(ngModel)]="productService.selectedProduct.tipo" class="form-control">
-                    <option value="Lunes" selected>Sabado</option>
-                    <option value="Martes">Martes</option>
-                    <option value="Miércoles">Miércoles</option>
-                    <option value="Jueves">Jueves</option>
-                    <option value="Viernes">Viernes</option>
-                </select>
-            </div></div>
-            </div>
-
-            <div class="form-group">
-            
-            <label >Bidon</label>
-            <div class="form-control" id="bajando">
-              <label class="radio-inline" >
-                <input type="radio" value="Bs 12Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta" checked>Bs 12Lts
-              </label>
-              <label class="radio-inline" class="ml-3" >
-                <input type="radio" value="B 12Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta">B 12Lts
-              </label>
-              <label class="radio-inline" class="ml-3" >
-                <input type="radio" value="D 20Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta">D 20Lts
-              </label>
-              <label class="radio-inline" class="ml-3" >
-                <input type="radio" value="20Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta">20Lts
-              </label>
-            </div>
-            </div>
-
-            <div class="row">
-            <div class="col-lg-6 col-sm-12"> <div class="form-group">
-                      
-                <label >Cantidad</label>
-                <div class="form-control">
-                  <label class="radio-inline" >
-                    <input type="radio" value="1" name="cantidad" [(ngModel)]="productService.selectedProduct.cantidad" checked>1
-                  </label>
-                  <label class="radio-inline" class="ml-3" >
-                    <input type="radio" value="2" name="cantidad" [(ngModel)]="productService.selectedProduct.cantidad">2
-                  </label>
-                  <label class="radio-inline" class="ml-3" >
-                    <input type="radio" value="3" name="cantidad" [(ngModel)]="productService.selectedProduct.cantidad">3
-                  </label>
-                </div>
-            </div></div>
-            <div class="col-lg-6 col-sm-12"> <div class="form-group">
-                      
-              <label >Prestado</label>
-              <div class="form-control">
-                <label class="radio-inline" >
-                  <input type="radio" value="0" name="prestado" [(ngModel)]="productService.selectedProduct.prestado" checked> 0
-                </label>
-                <label class="radio-inline" class="ml-3">
-                  <input type="radio" value="1" name="prestado" [(ngModel)]="productService.selectedProduct.prestado"> 1
-                </label>
-                <label class="radio-inline" class="ml-3" >
-                  <input type="radio" value="2" name="prestado" [(ngModel)]="productService.selectedProduct.prestado"> 2
-                </label>
-                <label class="radio-inline" class="ml-3" >
-                  <input type="radio" value="3" name="prestado" [(ngModel)]="productService.selectedProduct.prestado"> 3
-                </label>
-              </div>
-            </div> </div>
-            </div>
-            
-            <div class="row">
-              <div class="col-lg-6 col-sm-12"> <div class="form-group">
-                      
-              <label >Dispenser</label>
-              <div class="form-control">
-                <label class="radio-inline" >
-                  <input type="radio" value="Natural" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo" checked>Natural
-                </label>
-                <label class="radio-inline" class="ml-3">
-                  <input type="radio" value="Frío/Calor" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo">Frío/Calor
-                </label>
-              </div>
-            </div> </div>
-            </div>
-
-            <div class="row">
-              <div class="col-lg-6 col-sm-12">
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
-                    </div>
+    <form  #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+              
+                <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+                
+                <div class="row">
+                  <div class="col-3 "><div class="form-group">
                     <input 
                       type="number"
                       class="form-control"
-                      name="price"
-                      #price="ngModel"
-                      [(ngModel)]="productService.selectedProduct.price"
-                      placeholder="Precio"
+                      name="id"
+                      #name="ngModel"
+                      [(ngModel)]="productService.selectedProduct.id"
+                      placeholder="ID"
                       >
+                        </div>
                   </div>
-      </div>
-              </div>
-            </div>
-          
-            
-            
-            <div class="form-group">
-                        <button class="btn btn-primary" type="submit">
-                            <i class="fas fa-plus-circle"></i>  
-                        </button>
-                        <button class="btn btn-secondary ml-3 " type="reset" (click)="resetForm(productForm)">
-                            <i class="fas fa-sync-alt"></i> 
-                        </button>
-            </div>
-   
-</form>
-    </div>
+                  <div class="col-9"> 
+                    <div class="form-group">
+                    <input 
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      #name="ngModel"
+                      [(ngModel)]="productService.selectedProduct.name"
+                      placeholder="Cliente"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6 col-sm-12"><div class="form-group">
+                    <input 
+                      type="text"
+                      class="form-control"
+                      name="direccion"
+                      #name="ngModel"
+                      [(ngModel)]="productService.selectedProduct.direccion"
+                      placeholder="Dirección"
+                      >
+                  </div> </div>
+                  <div class="col-lg-6 col-sm-12"> <div class="form-group">
+                    <input 
+                      type="number"
+                      class="form-control"
+                      name="telefono"
+                      #name="ngModel"
+                      [(ngModel)]="productService.selectedProduct.telefono"
+                      placeholder="Telefono"
+                      >
+                  </div></div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6 col-sm-12"><div class="form-group">
+                    <label for="localidad">Localidad</label>
+                      <select name="localidad" id="localidad"  [(ngModel)]="productService.selectedProduct.localidad" class="form-control">
+                        <option value="Billinghurst">Billinghurst</option>
+                        <option value="Caseros">Caseros</option>
+                        <option value="Ciudad Jardin">Ciudad Jardin</option>
+                        <option value="Ciudadela">Ciudadela</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Haedo">Haedo</option>
+                        <option value="Martin Coronado">Martin Coronado</option>
+                        <option value="Munro" selected>Munro</option>
+                        <option value="Caseros">Olivos</option>
+                        <option value="Palomar" selected>Palomar</option>
+                        <option value="Saenz Peña" selected>Saenz Peña</option>
+                        <option value="San martin" selected>San martin</option>
+                        <option value="Villa Adelina">Villa Adelina</option>
+                        <option value="Villa bosch">Villa bosch</option>
+                        <option value="San Andrès">San Andrès</option>
+                      </select>
+                  </div> </div>
+                  <div class="col-lg-6 col-sm-12"><div class="form-group">
+                    <label for="tipo">Dia</label>
+                    <select name="tipo" id="tipo" [(ngModel)]="productService.selectedProduct.tipo" class="form-control">
+                        <option value="Lunes" selected>Sabado</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                    </select>
+                </div></div>
+                </div>
+
+                <div class="form-group">
+                
+                <label >Bidon</label>
+                <div class="form-control" id="bajando">
+                  <label class="radio-inline" >
+                    <input type="radio" value="Bs 12Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta" checked>Bs 12Lts
+                  </label>
+                  <label class="radio-inline" class="ml-3" >
+                    <input type="radio" value="B 12Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta">B 12Lts
+                  </label>
+                  <label class="radio-inline" class="ml-3" >
+                    <input type="radio" value="D 20Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta">D 20Lts
+                  </label>
+                  <label class="radio-inline" class="ml-3" >
+                    <input type="radio" value="20Lts" name="ruta" [(ngModel)]="productService.selectedProduct.ruta">20Lts
+                  </label>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-lg-6 col-sm-12"> <div class="form-group">
+                          
+                    <label >Cantidad</label>
+                    <div class="form-control">
+                      <label class="radio-inline" >
+                        <input type="radio" value="1" name="cantidad" [(ngModel)]="productService.selectedProduct.cantidad" checked>1
+                      </label>
+                      <label class="radio-inline" class="ml-3" >
+                        <input type="radio" value="2" name="cantidad" [(ngModel)]="productService.selectedProduct.cantidad">2
+                      </label>
+                      <label class="radio-inline" class="ml-3" >
+                        <input type="radio" value="3" name="cantidad" [(ngModel)]="productService.selectedProduct.cantidad">3
+                      </label>
+                    </div>
+                </div></div>
+                <div class="col-lg-6 col-sm-12"> <div class="form-group">
+                          
+                  <label >Prestado</label>
+                  <div class="form-control">
+                    <label class="radio-inline" >
+                      <input type="radio" value="0" name="prestado" [(ngModel)]="productService.selectedProduct.prestado" checked> 0
+                    </label>
+                    <label class="radio-inline" class="ml-3">
+                      <input type="radio" value="1" name="prestado" [(ngModel)]="productService.selectedProduct.prestado"> 1
+                    </label>
+                    <label class="radio-inline" class="ml-3" >
+                      <input type="radio" value="2" name="prestado" [(ngModel)]="productService.selectedProduct.prestado"> 2
+                    </label>
+                    <label class="radio-inline" class="ml-3" >
+                      <input type="radio" value="3" name="prestado" [(ngModel)]="productService.selectedProduct.prestado"> 3
+                    </label>
+                  </div>
+                </div> </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-lg-6 col-sm-12">
+                    <div class="form-group">
+                          
+                      <label >Dispenser</label>
+                      <div class="form-control">
+                        <label class="radio-inline" >
+                          <input type="radio" value="Natural" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo" checked>Natural
+                        </label>
+                        <label class="radio-inline" class="ml-3">
+                          <input type="radio" value="Frío/Calor" name="semaforo" [(ngModel)]="productService.selectedProduct.semaforo">F/C
+                        </label>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6 col-sm-12"><div class="form-group">
+                    <input 
+                      type="text"
+                      class="form-control"
+                      name="observacion"
+                      #name="ngModel"
+                      [(ngModel)]="productService.selectedProduct.observacion"
+                      placeholder="Observación"
+                      >
+                  </div> </div>
+                
+                </div>
+
+
+                <div class="row">
+                  <div class="col-lg-6 col-sm-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input 
+                          type="number"
+                          class="form-control"
+                          name="price"
+                          #price="ngModel"
+                          [(ngModel)]="productService.selectedProduct.price"
+                          placeholder="Precio"
+                          >
+                      </div>
+          </div>
+                  </div>
+                </div>
+              
+                
+                
+                <div class="form-group">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-plus-circle"></i>  
+                            </button>
+                            <button class="btn btn-secondary ml-3 " type="reset" (click)="resetForm(productForm)">
+                                <i class="fas fa-sync-alt"></i> 
+                            </button>
+                </div>
+      
+    </form>
   </div>
+</div> 
